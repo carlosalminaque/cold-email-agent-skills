@@ -17,6 +17,17 @@ if not m:
     errs.append("no frontmatter block at the top"); fm = ""
 else:
     fm = m.group(1)
+# strict YAML: some installers (for example npx skills) skip a skill whose frontmatter is not valid YAML,
+# such as an unquoted description containing ": ". claude.ai is more lenient, so check strictly here.
+try:
+    import yaml
+    try:
+        yaml.safe_load(fm)
+    except yaml.YAMLError as e:
+        errs.append("frontmatter is not valid strict YAML (quote the description if it contains ': '): " + str(e).splitlines()[0])
+except ImportError:
+    if re.search(r"^description:[ \t]*[^\"'].*: ", fm, re.M):
+        errs.append("unquoted description contains ': ' (invalid YAML for strict installers); wrap it in double quotes")
 name = re.search(r"^name:[ \t]*(.*)$", fm, re.M)
 desc = re.search(r"^description:[ \t]*(.*)$", fm, re.M)
 if not name: errs.append("missing name")

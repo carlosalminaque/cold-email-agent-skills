@@ -1,6 +1,6 @@
 ---
 name: outreach-experiments
-description: Use when planning, running or reading an A/B test or segment test on cold outreach (subject lines, angles, offers, segments, sending settings). Writes the plan before launch: one variable, exact control and variant, a sample floor, a fixed measurement window and one primary metric. Also checks up front whether the available volume can reach the floor at all.
+description: "Use when planning, running or reading an A/B test or segment test on cold outreach (subject lines, angles, offers, segments, sending settings). Writes the plan before launch: one variable, exact control and variant, a sample floor, a fixed measurement window and one primary metric. Also checks up front whether the available volume can reach the floor at all."
 ---
 
 # Outreach experiments

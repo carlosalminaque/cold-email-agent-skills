@@ -22,7 +22,7 @@ The first campaign idea tends to become the only one. Weeks later the team is tu
    - **Broad:** the widest list inside your gates, chosen on a firmographic fact you can check now (industry, role, a page on their site such as careers, team or pricing).
    - **Focused:** Broad plus exactly one dated trigger event (a hire, a funding round, a tech change).
    - **Niche:** several dated triggers stacked on each account. Small list, the most research per account.
-4. **Size check.** Market size guides breadth (see `market-size-check`). A small market rarely supports a lighter, templated Broad tier. Only a very large one does.
+4. **Size check.** Market size guides breadth. A small market rarely supports a lighter, templated Broad tier. Only a very large one does.
 5. **Build the table.** Columns: `# | Tier | List filters | Angle | Per-account research?` Order strictly Broad, then Focused, then Niche. See `references/table-example.md`.
 6. **Include at least one no-research concept,** narrow enough that a fixed message is credible for every lead on it.
 7. **Add one to three front-end offers:** the one sentence that makes an angle worth opening (for example, two sample emails written for their market).

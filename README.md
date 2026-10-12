@@ -1,6 +1,6 @@
 # Agent skills for running cold email with AI
 
-34 skills for AI agents (Claude, Codex and any agent that reads `SKILL.md` files) that run a B2B cold email operation, in four tracks: the cold email work itself, testing, what to do when things go wrong, and running several AI agents without drift.
+33 skills for AI agents (Claude, Codex and any agent that reads `SKILL.md` files) that run a B2B cold email operation, in four tracks: the cold email work itself, testing, what to do when things go wrong, and running several AI agents without drift.
 
 Every skill exists because its opposite went wrong in a real operation. Each one carries Valid and Invalid examples. Not sure where to begin? Load **[start-here](skills/start-here/SKILL.md)**: it routes any task to the right skill.
 
@@ -21,7 +21,6 @@ Or copy any folder from `skills/` into your agent's skills directory (for exampl
 | Skill | What it does | Status |
 |---|---|---|
 | [campaign-angles](skills/campaign-angles/SKILL.md) | 15 to 20 campaign concepts from broad to niche before committing to one | proven |
-| [market-size-check](skills/market-size-check/SKILL.md) | Is the market big enough and worth enough, from live records | newer |
 | [lead-qualification](skills/lead-qualification/SKILL.md) | Source and qualify in bounded waves, cheapest gates first, a source for every fact | proven |
 | [cold-email-first-touch](skills/cold-email-first-touch/SKILL.md) | First email and follow-up rules; launch only if every live step matches an approved text | proven |
 | [copy-refinement](skills/copy-refinement/SKILL.md) | The method for writing and fixing copy: rendered examples before rules, read as the recipient | proven |

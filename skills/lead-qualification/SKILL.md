@@ -23,7 +23,7 @@ Padding a list to a round number fills it with companies that never fit. Long ru
    2. **Basic fit.** Country, size, business type, per your one source.
    3. **Proof the business is real.** Customers, case studies, funding or other traction your criteria require. Search news before rejecting on this.
    4. **Core offer.** Exclude competitors only on literal quotes from their own pages, never on one keyword.
-   5. **Economic fit** (see `market-size-check`).
+   5. **Economic fit**: the deal size your one source sets.
    6. **Buyer.** A named person whose published title matches your buyer role. Never infer duties from a title.
    7. **Signals.** Record dated triggers and their source. A missing signal lowers priority. It never disqualifies on its own.
 4. **Evidence per lead.** Every gate fact carries its source and the date checked. A fact from one secondary source is "unverified, single source" and cannot decide a verdict. Close calls get a human spot-check before a final verdict.

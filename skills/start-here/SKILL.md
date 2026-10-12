@@ -5,13 +5,13 @@ description: Use at the start of any cold email or agent-operations task when it
 
 # Start here
 
-This collection has 33 skills in four tracks. Each skill does one job and points to the others where they meet. This file only routes; it holds no rules of its own.
+This collection has 32 skills in four tracks. Each skill does one job and points to the others where they meet. This file only routes; it holds no rules of its own.
 
 ## Which skill
 
 | The task | Skill |
 |---|---|
-| Deciding what campaign to run | campaign-angles, then market-size-check |
+| Deciding what campaign to run | campaign-angles |
 | Finding and qualifying companies and people | lead-qualification |
 | Writing or fixing the emails | cold-email-first-touch for the rules, copy-refinement for the method |
 | Before a list goes into the sending tool | pre-send-list-check |
@@ -36,7 +36,7 @@ This collection has 33 skills in four tracks. Each skill does one job and points
 
 ## New campaign, in order
 
-1. campaign-angles and market-size-check: pick the shape.
+1. campaign-angles: pick the shape.
 2. lead-qualification: build the list.
 3. cold-email-first-touch with copy-refinement: write and test the copy on rendered emails.
 4. pre-send-list-check and deliverability-audit: both are launch gates with a written result.
