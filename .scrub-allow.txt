@@ -1,1 +1,2 @@
 Copyright (c) 2026 Carlos Alminaque
+npx skills add carlosalminaque/cold-email-agent-skills
