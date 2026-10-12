@@ -2,7 +2,7 @@
 
 33 skills for AI agents (Claude, Codex and any agent that reads `SKILL.md` files) that run a B2B cold email operation, in four tracks: the cold email work itself, testing, what to do when things go wrong, and running several AI agents without drift.
 
-Every skill exists because its opposite went wrong in a real operation. Each one carries Valid and Invalid examples. Not sure where to begin? Load **[start-here](skills/start-here/SKILL.md)**: it routes any task to the right skill.
+Most skills were written after something went wrong in real work. Each one carries Valid and Invalid examples. Not sure where to begin? Load **[start-here](skills/start-here/SKILL.md)**: it routes any task to the right skill.
 
 **Status:** *proven* means the skill has run in daily operation for weeks and its rules came from repeated real failures. *Newer* means it is in use but has had less time to be tested by real cases.
 
