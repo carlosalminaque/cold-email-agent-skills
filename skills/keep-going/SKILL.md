@@ -1,9 +1,11 @@
 ---
 name: keep-going
-description: Use when the human says keep going, just make the call, don't stop for questions, or wants progress over check-ins on a long build or automation task. At each design fork, pick the option you would have recommended, log it, and continue. At the first natural stopping point, present every logged decision as multiple choice with your pick marked so the human can override. Sends, spend, publishing, deletion and credentials still need a yes first.
+description: "Use when the human says keep going, just make the call, don't stop for questions, or wants progress over check-ins on a long build or automation task. At each design fork, pick the option you would have recommended, log it, and continue. At the first natural stopping point, present every logged decision as multiple choice with your pick marked so the human can override. Sends, spend, publishing, deletion and credentials still need a yes first."
 ---
 
 # Keep going, decide, report the decisions afterwards
+
+Needs: none
 
 An agent that stops at every design fork turns a two-hour task into a day of waiting. An agent that decides silently leaves the human unable to see or reverse what was chosen. This skill does both halves: never block on a design question, and never let a decision go unrecorded. The human reviews all the forks at once, at a moment that suits them, and can override any of them.
 

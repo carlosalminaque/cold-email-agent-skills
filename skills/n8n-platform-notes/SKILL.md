@@ -5,6 +5,8 @@ description: "Reference for n8n platform behavior that holds no matter which too
 
 # n8n platform notes
 
+Needs: none
+
 Platform and API facts about n8n, separate from browser technique problems (screenshot timeouts, drag precision). Behavior can vary by n8n version and hosting; confirm on your own instance before relying on a specific endpoint.
 
 ## A save does not change what runs: you must publish

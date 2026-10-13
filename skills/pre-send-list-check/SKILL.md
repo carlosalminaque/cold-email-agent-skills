@@ -1,9 +1,11 @@
 ---
 name: pre-send-list-check
-description: Use right before a lead list is uploaded to a sending tool. Checks the exact final list for verification status, whether each email's domain belongs to the company on the record, duplicates, catch-all and unknown results, junk in personalization fields, and anyone who opted out or is on a do-not-contact list. Data hygiene only; it does not re-score whether a lead is a good fit.
+description: "Use right before a lead list is uploaded to a sending tool. Checks the exact final list for verification status, whether each email's domain belongs to the company on the record, duplicates, catch-all and unknown results, junk in personalization fields, and anyone who opted out or is on a do-not-contact list. Data hygiene only; it does not re-score whether a lead is a good fit."
 ---
 
 # Pre-send list check
+
+Needs: none
 
 A company can be a perfect fit and still have a dead address, a duplicate row, or an address that verifies fine but belongs to a different company. Qualification and hygiene are different jobs; this is hygiene.
 

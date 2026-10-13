@@ -5,6 +5,8 @@ description: "Use when a person's recorded voice for a video or podcast sounds o
 
 # Voice recording check
 
+Needs: speech model
+
 The agent cannot hear audio. Never claim a sound problem is fixed, or name its cause, from reasoning or measurements alone. Measure, then hand the person short A/B clips of the same words so their ear decides. Their ear outranks every measurement.
 
 ## 1. Measurements are hints, not a verdict

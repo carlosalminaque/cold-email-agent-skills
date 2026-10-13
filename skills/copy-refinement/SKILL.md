@@ -1,9 +1,11 @@
 ---
 name: copy-refinement
-description: Use before drafting, reviewing or fixing any outbound copy (cold email steps, reply drafts, deck or website lines, example emails) and whenever someone reacts to a rendered line with "that doesn't make sense" or "why does it say that". Finds the root cause before patching, shows rendered examples before rules, reads every draft as the recipient, stops after two patch-induced failures, freezes fixed elements, and ships every rule with a Valid and an Invalid example.
+description: "Use before drafting, reviewing or fixing any outbound copy (cold email steps, reply drafts, deck or website lines, example emails) and whenever someone reacts to a rendered line with \"that doesn't make sense\" or \"why does it say that\". Finds the root cause before patching, shows rendered examples before rules, reads every draft as the recipient, stops after two patch-induced failures, freezes fixed elements, and ships every rule with a Valid and an Invalid example."
 ---
 
 # Copy refinement
+
+Needs: none
 
 Most bad copy is not a wording problem. It is a mechanism asking one line to do a job it cannot do from its inputs, then patched rule by rule until the rules contradict each other. In one rebuild, a per-lead AI sentence about the reader passed every written rule (sourced, checked, read aloud) and still read as AI-written to the one prospect who answered. The rules tested whether a line was true. None tested whether it was worth reading. This skill is the method that makes copy rules, tests them on real sentences, and keeps them small. The domain rules themselves (your wording, your bans, your approved texts) live in your one source, not here.
 

@@ -5,6 +5,8 @@ description: "Use when the person hands over a batch of concerns, review finding
 
 # One decision at a time
 
+Needs: none
+
 The person has a list of concerns about a live system and wants to settle them together, not have the agent silently rewrite everything. The shape: one item at a time, a real recommendation up front, the person's call on the tradeoff, then the changes made and written back to wherever they need to last.
 
 ## Why one at a time

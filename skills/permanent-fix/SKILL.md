@@ -1,9 +1,11 @@
 ---
 name: permanent-fix
-description: Use right after a human corrects the agent, at the end of every long session, and when asked for a retro or a permanent fix. Lists every mistake, refusal, workaround and correction from the session and turns each into the strongest fix available - first a check or script that makes the mistake impossible, then one short rule merged into the file that owns the lesson, otherwise a log line. Searches before adding so rules are merged, never duplicated. Ends with a count line.
+description: "Use right after a human corrects the agent, at the end of every long session, and when asked for a retro or a permanent fix. Lists every mistake, refusal, workaround and correction from the session and turns each into the strongest fix available - first a check or script that makes the mistake impossible, then one short rule merged into the file that owns the lesson, otherwise a log line. Searches before adding so rules are merged, never duplicated. Ends with a count line."
 ---
 
 # Permanent fix (session retro)
+
+Needs: none
 
 Every mistake should happen once. "Lesson learned, I'll be more careful" is not a fix: the next session starts with no memory of being careful. A fix is something that changes what the next session sees or what the system allows.
 

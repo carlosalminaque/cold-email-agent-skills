@@ -1,9 +1,11 @@
 ---
 name: single-source-of-truth
-description: Use whenever a rule, price, approved text, target or decision changes, whenever a human corrects the agent, and whenever two files are found saying different things about the same topic. Keeps every fact in exactly one source listed in a source map, replaces copies with pointers, retires the old wording in the same change, and runs a sweep before calling it done.
+description: "Use whenever a rule, price, approved text, target or decision changes, whenever a human corrects the agent, and whenever two files are found saying different things about the same topic. Keeps every fact in exactly one source listed in a source map, replaces copies with pointers, retires the old wording in the same change, and runs a sweep before calling it done."
 ---
 
 # One source
+
+Needs: none
 
 Agents copy. A rule stated in a prompt, a memory file, a skill and a wiki page will be stated four slightly different ways within a week, and the agent that reads the stale copy acts on it. The cure is one source per topic and a pointer everywhere else.
 

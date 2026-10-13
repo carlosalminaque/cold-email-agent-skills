@@ -1,9 +1,11 @@
 ---
 name: demo-screenshots
-description: Use when screenshots of a working system are needed to show it off, for a manual, a website, a walkthrough or a client-facing deck, and the system has already been tested or does not need testing for this purpose. Runs a happy-path click-through with clean fictional demo data, flags anything visibly broken, and builds an annotated deliverable. Use stress-test-and-manual instead when the goal is proving the system does not break.
+description: "Use when screenshots of a working system are needed to show it off, for a manual, a website, a walkthrough or a client-facing deck, and the system has already been tested or does not need testing for this purpose. Runs a happy-path click-through with clean fictional demo data, flags anything visibly broken, and builds an annotated deliverable. Use stress-test-and-manual instead when the goal is proving the system does not break."
 ---
 
 # Demo screenshots
+
+Needs: browser control
 
 A screenshot for a deck has a different job from a screenshot for a bug report. It must look finished, use believable data, and show one real capability. Test-run screenshots usually fail that: real prospect names on screen, debug labels like "test copy 2", empty states that look thin, or an AI draft that pitches the wrong company. Capture demo screenshots on purpose, from a clean run.
 

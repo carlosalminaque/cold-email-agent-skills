@@ -1,9 +1,11 @@
 ---
 name: campaign-angles
-description: Use before committing to one cold email campaign shape, when choosing what to test next, or before a new sourcing push. Produces a table of 15 to 20 campaign concepts ordered Broad, Focused, Niche, each with its list filters, its angle and whether it needs per-account research, so a human picks one angle or a small A/B set instead of the first idea becoming the campaign.
+description: "Use before committing to one cold email campaign shape, when choosing what to test next, or before a new sourcing push. Produces a table of 15 to 20 campaign concepts ordered Broad, Focused, Niche, each with its list filters, its angle and whether it needs per-account research, so a human picks one angle or a small A/B set instead of the first idea becoming the campaign."
 ---
 
 # Campaign angles
+
+Needs: none
 
 The first campaign idea tends to become the only one. Weeks later the team is tuning subject lines on an angle nobody compared against alternatives. A short table of many concepts, built before anything is sourced or written, costs an hour and shows which angles the data can actually support. This skill ends at options and reasoning. It never launches anything.
 

@@ -5,6 +5,8 @@ description: "Use when asked to audit an agent's working context for drift: its 
 
 # Context audit
 
+Needs: local shell
+
 A read-only audit of everything an agent loads as context. Over time, skills, memory and project docs drift apart: a skill still tells sessions to do something the person banned, a pointer names a file that no longer exists, an old checkpoint quietly passes for current. This audit finds that drift before a session acts on it.
 
 Read-only means: produce findings, propose fixes, apply nothing without a yes per finding. The one exception is copying findings onto the to-do list (see below), which is a note, not a fix.

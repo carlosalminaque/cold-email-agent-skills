@@ -1,9 +1,11 @@
 ---
 name: checkpoint-handoff
-description: Use during long, tool-heavy agent sessions (workflow builds, integrations, browser work, multi-step coding), unasked, every handful of real steps and at each milestone, and whenever the human steps away or asks what is left. Writes a self-contained checkpoint file a fresh session can resume from, and keeps one shared open-items list, so no item lives only in one chat.
+description: "Use during long, tool-heavy agent sessions (workflow builds, integrations, browser work, multi-step coding), unasked, every handful of real steps and at each milestone, and whenever the human steps away or asks what is left. Writes a self-contained checkpoint file a fresh session can resume from, and keeps one shared open-items list, so no item lives only in one chat."
 ---
 
 # Checkpoint and handoff
+
+Needs: none
 
 Long agent sessions can slow down, hang, or get compacted with no warning and no clean way to export the history. When that happens, whatever existed only in the chat is gone. A fresh session then either asks the human to explain everything again, or acts on guesses and redoes work: a second paid upgrade, an overwritten config, a migration run twice. Checkpoints written as a habit, like commits, mean there is always a recent save point. One shared open-items list means "what's left" has one answer, not one per session.
 

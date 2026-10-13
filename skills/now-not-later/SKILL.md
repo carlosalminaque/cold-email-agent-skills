@@ -5,6 +5,8 @@ description: "Use whenever an agent is about to tell the person, or another agen
 
 # Now, not later
 
+Needs: none
+
 Agents add delays on their own: a clock window copied from a script, "after the launch check", "in the next prompt". Each sounds careful. Together they turn a same-day task into a week. The person usually wants speed and ends up asking "why wait?" over and over.
 
 ## The rule

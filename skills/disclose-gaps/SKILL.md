@@ -1,9 +1,11 @@
 ---
 name: disclose-gaps
-description: Use before sending any status update, fix report or finding, including answers to casual "how's it going" questions. States in the same report anything incomplete, temporary, rolled back, deferred, unverified or degraded, reads every list that holds open items rather than only the newest, and treats any gap found later as a defect in this skill to be patched immediately.
+description: "Use before sending any status update, fix report or finding, including answers to casual \"how's it going\" questions. States in the same report anything incomplete, temporary, rolled back, deferred, unverified or degraded, reads every list that holds open items rather than only the newest, and treats any gap found later as a defect in this skill to be patched immediately."
 ---
 
 # Disclose gaps
+
+Needs: none
 
 The failure: a report says "fixed" while a known limitation, partial scope or shortcut is left out. It surfaces later, when the human asks a follow-up or checks for themselves. Their fair question: "how would I know if you don't say anything?"
 

@@ -5,6 +5,8 @@ description: "Use when someone asks for a mockup, says show me what this would l
 
 # Mockups
 
+Needs: local shell
+
 People cannot approve a UI change from a prose description. They need to see it. This skill replaces "the dialog would have a title, two fields and a blue button on the right" with the actual dialog, rendered.
 
 ## When to use it

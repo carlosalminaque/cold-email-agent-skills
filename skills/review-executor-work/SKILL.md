@@ -5,6 +5,8 @@ description: "Use when another agent (a coding agent, a scheduled worker, a back
 
 # Review executor work
 
+Needs: local shell
+
 An executor (another agent doing the hands-on work) has finished or stopped. Your job is to go read what it did, check it, and come back with a review and the next instruction. The person should never have to paste the report to you if you can read it yourself.
 
 ## Steps

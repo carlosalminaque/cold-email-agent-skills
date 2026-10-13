@@ -1,9 +1,11 @@
 ---
 name: approved-reply-send
-description: Use when a real prospect reply is waiting for a human to approve the answer, or when the human says yes to a proposed reply. Flags the waiting reply in its own short message so it cannot be missed, checks the draft body and especially the closing line, sends within minutes of the yes using the exact approved text, and reads the sent copy back from the mailbox before reporting.
+description: "Use when a real prospect reply is waiting for a human to approve the answer, or when the human says yes to a proposed reply. Flags the waiting reply in its own short message so it cannot be missed, checks the draft body and especially the closing line, sends within minutes of the yes using the exact approved text, and reads the sent copy back from the mailbox before reporting."
 ---
 
 # Approved reply send
+
+Needs: browser control
 
 A warm reply goes cold fast. The usual way it gets lost is not a bad draft but a buried one: the waiting reply sits at the bottom of a long status report and nobody sees it for a day. The second way is a closing line that asks the prospect something they just answered, or pushes a call they never asked for. The third is "sent" reported from a button click, when the email never left. This skill handles all three.
 

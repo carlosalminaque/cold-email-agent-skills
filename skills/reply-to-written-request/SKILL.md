@@ -5,6 +5,8 @@ description: "Use when drafting a written response to someone who has described 
 
 # Reply to a written request
 
+Needs: none
+
 The reader has many replies to skim. Most get skipped because they missed an explicit ask, ignored the reader's stated worry, or sounded like a vendor guessing. This method avoids all three.
 
 ## 1. Read the request for three things

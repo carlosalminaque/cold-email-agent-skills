@@ -5,6 +5,8 @@ description: "Use when the person says prelaunch, run pre-launch, or stage the c
 
 # Campaign prelaunch
 
+Needs: browser control
+
 Get a cold email campaign fully staged and ready to fire, without firing it. The run ends at the launch button with everything configured and the copy approved, waiting for the person's explicit go.
 
 Raise questions and a plain recommendation at each real decision point (a sourcing result, a tool failure, a fork in approach) as you go. Do not run the whole thing silently and report only at the end.

@@ -1,9 +1,11 @@
 ---
 name: reply-test-battery
-description: Use whenever an AI reply drafter for cold email is tested, fixed or shipped. Runs a fixed set of made-up prospect replies against a test copy, grades the drafts, and gates the release. Covers fixing the one rule source first, never editing model output in code, stopping when results flip, a pass bar split by what can reach a prospect unedited, a spend cap, and cheap iteration before one full paid run.
+description: "Use whenever an AI reply drafter for cold email is tested, fixed or shipped. Runs a fixed set of made-up prospect replies against a test copy, grades the drafts, and gates the release. Covers fixing the one rule source first, never editing model output in code, stopping when results flip, a pass bar split by what can reach a prospect unedited, a spend cap, and cheap iteration before one full paid run."
 ---
 
 # Reply test battery
+
+Needs: none
 
 An AI reply drafter changes every time its prompt, rules or model changes. Without a fixed test set, each fix is checked against whatever reply happened to come in, and a fix for one case quietly breaks three others. A common failure: a team patches the drafter prompt to pass one case, the grader still holds the old rule, and the same cases flip between pass and fail on every run while the API bill grows. The battery is a fixed set of cases, one rule source, and a pass bar decided before the run.
 

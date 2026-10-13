@@ -1,9 +1,11 @@
 ---
 name: fewer-round-trips
-description: Use when coordinating work across agents or sessions (a builder, a reviewer, a releaser) and whenever a human says "no back and forth", "why didn't you just", or "prompt" after a reply that should already have contained one. Every reply to a report ends with the next prompt ready, prompts cover everything left rather than the last finding, the executor tests its own work, and the agent never becomes the courier between two other agents.
+description: "Use when coordinating work across agents or sessions (a builder, a reviewer, a releaser) and whenever a human says \"no back and forth\", \"why didn't you just\", or \"prompt\" after a reply that should already have contained one. Every reply to a report ends with the next prompt ready, prompts cover everything left rather than the last finding, the executor tests its own work, and the agent never becomes the courier between two other agents."
 ---
 
 # No back and forth
+
+Needs: none
 
 For a solo operator, every round trip costs two pastes, a wait and a context switch, and produces nothing they didn't already have. Most round trips come from a handful of habits in how prompts are written. This skill names them and replaces each one.
 

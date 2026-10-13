@@ -1,11 +1,13 @@
 ---
 name: start-here
-description: Use at the start of any cold email or agent-operations task when it is not obvious which skill in this collection applies, or when someone asks what these skills do or where to begin. Routes the task to the right skill in four tracks (cold email work, testing, when things go wrong, running AI agents) and names the order to run them in for a new campaign.
+description: "Use at the start of any cold email or agent-operations task when it is not obvious which skill in this collection applies, or when someone asks what these skills do or where to begin. Routes the task to the right skill in four tracks (cold email work, testing, when things go wrong, running AI agents) and names the order to run them in for a new campaign."
 ---
 
 # Start here
 
-This collection has 61 skills in five tracks. Each skill does one job and points to the others where they meet. This file only routes; it holds no rules of its own.
+Needs: none
+
+This collection has 66 skills across cold email and agent operations. Each skill does one job and points to the others where they meet. This file only routes; it holds no rules of its own.
 
 ## Which skill
 
@@ -73,3 +75,12 @@ This collection has 61 skills in five tracks. Each skill does one job and points
 - A green status is a claim. Read back what the step produced.
 
 Valid: "New campaign: ran campaign-angles, then lead-qualification on the chosen angle." Invalid: loading leads into the sending tool before pre-send-list-check and deliverability-audit have a written result.
+
+## Additional operations
+
+| Task | Skill |
+|---|---|
+| Using or setting up credentials | keys-never-in-chat |
+| Reporting finished work | handoff-contract |
+| Explaining a prior action | explain-why |
+| Checking every member of a set | whole-set-check |

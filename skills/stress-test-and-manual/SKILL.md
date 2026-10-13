@@ -1,9 +1,11 @@
 ---
 name: stress-test-and-manual
-description: Use when asked for a full, skeptical pass on a feature or system and a written manual at the end. Clicks through every state in the real interface, tries deliberate misuse (double clicks, out of order steps, odd input), root-causes anything that breaks, and then writes a manual with annotated screenshots, a diagram for any hard rule, and plain findings. Triggers include test everything, try to break it, and write a user manual.
+description: "Use when asked for a full, skeptical pass on a feature or system and a written manual at the end. Clicks through every state in the real interface, tries deliberate misuse (double clicks, out of order steps, odd input), root-causes anything that breaks, and then writes a manual with annotated screenshots, a diagram for any hard rule, and plain findings. Triggers include test everything, try to break it, and write a user manual."
 ---
 
 # Stress test and manual
+
+Needs: browser control
 
 "It's built" is not "it works". Features get marked done after reading the config, and break the first time someone clicks a button twice or acts on an item that was already processed. A skeptical owner is right to doubt done claims. This skill closes the gap with evidence: every state clicked, deliberate misuse tried, and a manual that states plainly what broke.
 

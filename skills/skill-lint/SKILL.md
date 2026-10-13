@@ -1,9 +1,11 @@
 ---
 name: skill-lint
-description: Use before writing, editing or delivering any SKILL.md, and before shipping a batch of skill edits. Runs check_skill.py on each skill (description length and angle brackets, name format), which blocks delivery on failure, then runs lint_skills.py on the whole skills folder to flag oversized files, copied facts, duplicated rules, history piled into the body, broken reference pointers and names of retired skills.
+description: "Use before writing, editing or delivering any SKILL.md, and before shipping a batch of skill edits. Runs check_skill.py on each skill (description length and angle brackets, name format), which blocks delivery on failure, then runs lint_skills.py on the whole skills folder to flag oversized files, copied facts, duplicated rules, history piled into the body, broken reference pointers and names of retired skills."
 ---
 
 # Skill lint
+
+Needs: local shell
 
 Skills rot in predictable ways. A description grows past the platform limit, or quotes a template with angle brackets that the loader reads as a tag, and the skill silently fails to save. Over months, the same rule gets pasted into three skills and drifts, a price or setting gets copied in and goes stale, incident stories pile up in the body until the rules are hard to find, and pointers to merged skills stop working. Two scripts catch all of this mechanically, so nobody has to remember to look.
 

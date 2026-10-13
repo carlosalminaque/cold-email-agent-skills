@@ -1,9 +1,11 @@
 ---
 name: round-trip-test
-description: Use when someone needs proof that an email automation works end to end, not just that its code looks right. Sends a real message through the real path to a test inbox you own, gets a real reply back, and records every stage as it happens, including the write-back to the system of record. Use after synthetic tests pass and before trusting a reply or send automation with real prospects.
+description: "Use when someone needs proof that an email automation works end to end, not just that its code looks right. Sends a real message through the real path to a test inbox you own, gets a real reply back, and records every stage as it happens, including the write-back to the system of record. Use after synthetic tests pass and before trusting a reply or send automation with real prospects."
 ---
 
 # Round-trip test
+
+Needs: browser control
 
 A mock proves the logic. It does not prove the live system. Webhooks get pointed at the wrong URL, a credential expires, a timer never fires, a record never gets marked as sent. These faults only show up when a real message travels the real path. A common failure: the email leaves the inbox, the run ends in an error, and the record still says "pending". The next approval then sends the same reply twice. A round-trip test catches that before a prospect does.
 

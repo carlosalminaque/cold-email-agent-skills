@@ -5,6 +5,8 @@ description: "Use whenever the task is to recreate, copy, match or reuse visual 
 
 # Match a reference image
 
+Needs: local shell
+
 ## Why this exists
 
 Given a reference image, the tempting move is to describe it to yourself ("three linked dots, orange") and rebuild it from that description: a hand-drawn SVG, a hex code that looks about right. The result is plausible and wrong. Icons come out generic, colors are close but off, shapes end up mirrored. The person comparing against the real image notices at once.

@@ -5,6 +5,8 @@ description: "Use before starting any nontrivial build, automation or integratio
 
 # Confirm before build
 
+Needs: none
+
 ## Why this exists
 
 A common and expensive failure: the person describes an experience in their own words, the agent picks a plausible technical reading, builds it, tests it, and declares it working. Every technical test passes. The person keeps saying they do not see the result. Only much later does it surface that the thing built and the thing asked for were different, sometimes when something that already did the job existed the whole time.

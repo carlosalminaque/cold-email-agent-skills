@@ -1,9 +1,11 @@
 ---
 name: route-blocked-work
-description: Use whenever an agent is blocked (a tool refusal on authorized work, a login it cannot do, a missing credential or access method, a policy or launcher refusal) and always before telling the human to do something by hand. Classifies the block, tries the other agents in a fixed order, writes the handoff in the same turn, and names the durable fix so the same block does not come back.
+description: "Use whenever an agent is blocked (a tool refusal on authorized work, a login it cannot do, a missing credential or access method, a policy or launcher refusal) and always before telling the human to do something by hand. Classifies the block, tries the other agents in a fixed order, writes the handoff in the same turn, and names the durable fix so the same block does not come back."
 ---
 
 # Route blocked work, then remove the blocker
+
+Needs: none
 
 A solo operator often runs several agents, each with different reach: a cloud assistant, a local coding agent, a builder with write access to the project, and a runner on the user's own machine that holds their saved credentials. When one agent hits a wall, the lazy answer is "please do this by hand". That turns the human into the fallback for every limit of every tool. The better answer is to try the other agents first, hand the work over in the same reply, and fix whatever caused the wall so it does not happen again next week.
 

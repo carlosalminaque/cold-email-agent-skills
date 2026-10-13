@@ -1,9 +1,11 @@
 ---
 name: lead-qualification
-description: Use when sourcing or qualifying B2B companies for cold outreach, or running a long sourcing run. Works in bounded waves with a checkpoint after each, runs cheap checks first (dedupe, address, fit), records evidence per lead, gates on a verified person-specific address, and checks country rules before import. Who is in scope is your own ideal customer profile, read live from your one source.
+description: "Use when sourcing or qualifying B2B companies for cold outreach, or running a long sourcing run. Works in bounded waves with a checkpoint after each, runs cheap checks first (dedupe, address, fit), records evidence per lead, gates on a verified person-specific address, and checks country rules before import. Who is in scope is your own ideal customer profile, read live from your one source."
 ---
 
 # Lead qualification
+
+Needs: browser control
 
 Padding a list to a round number fills it with companies that never fit. Long runs that die halfway lose everything that wasn't written down. A shared inbox that "qualified" wastes a whole sequence on nobody. This is the method for building a short list of real, verifiable prospects. The criteria, meaning your ideal customer profile, size bands, countries and exclusions, are yours and live in your one source. This skill never restates them.
 

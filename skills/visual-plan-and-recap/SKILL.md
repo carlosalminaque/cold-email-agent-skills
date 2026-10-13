@@ -5,6 +5,8 @@ description: "Use to turn a build into one scannable visual page, either before 
 
 # Visual plan and recap
 
+Needs: local shell
+
 A wall of text is hard to sanity-check. A diagram is not. This skill makes one HTML page that shows a change, either as a plan (before building) or as a recap (after building). Both modes share one visual language so they read as a matched pair.
 
 ## Pick the mode

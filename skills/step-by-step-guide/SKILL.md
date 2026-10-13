@@ -5,6 +5,8 @@ description: "Use when someone types /guide or asks for easy-to-follow instructi
 
 # Step-by-step guide
 
+Needs: browser control
+
 Easy-to-follow instructions for a task the person will do by hand, in the best format for the situation.
 
 ## First: does anyone need to do this by hand?

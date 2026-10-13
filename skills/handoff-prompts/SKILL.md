@@ -1,9 +1,11 @@
 ---
 name: handoff-prompts
-description: Use whenever drafting a prompt another agent or session will run, or a reply to a report pasted from one. Covers the two-line header outside the block, one block per destination, never replacing a prompt already pasted (send a steering note instead), start conditions inside the block, scope by outcome and rule rather than method or count, and a final check on the actual text before it ships.
+description: "Use whenever drafting a prompt another agent or session will run, or a reply to a report pasted from one. Covers the two-line header outside the block, one block per destination, never replacing a prompt already pasted (send a steering note instead), start conditions inside the block, scope by outcome and rule rather than method or count, and a final check on the actual text before it ships."
 ---
 
 # Handoff prompts
+
+Needs: none
 
 When a human relays work between agents by pasting, every prompt is a paste, a wait and a chance for confusion. Most confusion comes from the shape of the prompt, not its content: which window it goes into, whether it replaces something already running, when exactly to paste it. These rules make a prompt unambiguous on first read and complete enough that the next report is not just a question back.
 

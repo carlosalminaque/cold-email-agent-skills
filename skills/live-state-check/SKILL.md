@@ -1,9 +1,11 @@
 ---
 name: live-state-check
-description: Use whenever a task needs the current state of a live web tool (a CRM, a workflow tool like n8n, a sending platform, a hosting panel) before stating it or changing it. Reads the state in the real tool through a signed-in browser or its API, checks which account is signed in, handles frozen tabs, never types credentials, stops at a safety block instead of cycling workarounds, and reports results rather than settings, with the time read.
+description: "Use whenever a task needs the current state of a live web tool (a CRM, a workflow tool like n8n, a sending platform, a hosting panel) before stating it or changing it. Reads the state in the real tool through a signed-in browser or its API, checks which account is signed in, handles frozen tabs, never types credentials, stops at a safety block instead of cycling workarounds, and reports results rather than settings, with the time read."
 ---
 
 # Live state check
+
+Needs: browser control
 
 What a system did yesterday, or what a summary says it does, is not what it does now. Several people and agents touch the same tools, and settings drift. A common failure: an agent reports "the workflow is active" from a note, when it was switched off a week ago. Another: the agent reads a permission error as real when the browser was signed into the wrong account. Read the live tool, say which account and when, and report results rather than settings.
 

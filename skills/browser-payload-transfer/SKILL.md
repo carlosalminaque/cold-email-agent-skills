@@ -5,6 +5,8 @@ description: "Use whenever a large payload that must arrive byte for byte (a JSO
 
 # Browser payload transfer
 
+Needs: browser control
+
 ## The problem
 
 Typing a large payload into script-evaluation tool calls is unreliable, however it is chunked or encoded. Two separate failure modes cause it:

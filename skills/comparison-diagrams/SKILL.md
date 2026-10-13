@@ -5,6 +5,8 @@ description: "Use when the person wants a comparison turned into a shareable dia
 
 # Comparison diagrams
 
+Needs: local shell
+
 Two layouts that share one visual system: a **story** diagram (one start, two outcomes) and a **versus** diagram (two options weighed side by side). Both open by splitting into two lanes and close by merging back into one verdict, so the page shape tells the story before anyone reads it.
 
 ## Pick the shape

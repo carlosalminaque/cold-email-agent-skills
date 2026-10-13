@@ -1,9 +1,11 @@
 ---
 name: cold-email-first-touch
-description: Use when writing, reviewing or launching a B2B cold email sequence - the first email, its follow-ups, or any example email shown to someone. Keeps per-lead personalization to fields that can be checked, keeps the first email short with one low-friction ask and no price, tests changes on rendered emails rather than abstract rules, and checks before launch that every live step matches an approved text.
+description: "Use when writing, reviewing or launching a B2B cold email sequence - the first email, its follow-ups, or any example email shown to someone. Keeps per-lead personalization to fields that can be checked, keeps the first email short with one low-friction ask and no price, tests changes on rendered emails rather than abstract rules, and checks before launch that every live step matches an approved text."
 ---
 
 # Cold first email
+
+Needs: none
 
 These are working rules from running cold email for B2B services, not universal laws. Each one exists because the opposite went wrong. Put your own versions in one source (see `single-source-of-truth`) and let the drafter read them from there.
 

@@ -1,9 +1,11 @@
 ---
 name: reply-handling
-description: Use when building, testing or operating an AI system that sorts and drafts responses to cold email replies, and when a real prospect reply is waiting for a human's approval. Covers reply categories and which may auto-send, check-and-redraft instead of editing model output, testing against a fixed case set, finding disagreeing instructions when results flip, and flagging a waiting reply so it gets answered fast.
+description: "Use when building, testing or operating an AI system that sorts and drafts responses to cold email replies, and when a real prospect reply is waiting for a human's approval. Covers reply categories and which may auto-send, check-and-redraft instead of editing model output, testing against a fixed case set, finding disagreeing instructions when results flip, and flagging a waiting reply so it gets answered fast."
 ---
 
 # Reply handling
+
+Needs: none
 
 Replies are where a cold email program is won or lost, and where an AI drafter can do the most damage. The design goal: fast answers to the easy replies, nothing risky sent without a human, and a human who can approve in seconds.
 

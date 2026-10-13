@@ -1,9 +1,11 @@
 ---
 name: split-secret-drift
-description: Use when a call that used to work now fails with an unauthorized or invalid-key error, and the secret lives in two places kept in sync by hand, such as a raw key in a vault and its hash or copy in a server config. Isolates the failing credential with one safe read, checks stored values by shape and length without ever reading them, and rotates both sides from one held value in one sitting.
+description: "Use when a call that used to work now fails with an unauthorized or invalid-key error, and the secret lives in two places kept in sync by hand, such as a raw key in a vault and its hash or copy in a server config. Isolates the failing credential with one safe read, checks stored values by shape and length without ever reading them, and rotates both sides from one held value in one sitting."
 ---
 
 # Split-secret drift
+
+Needs: none
 
 Hand-rolled API key auth often keeps one secret in two homes: the raw key on the client side and a copy or hash on the server side. Every manual copy between them is a chance to drift: an extra space, a value left from an older attempt, or a new raw key whose hash was never recomputed. The comparison code is almost never the bug. The two stored values have stopped matching. Agents lose hours reading auth logic and request routing when one cheap check would have found it.
 

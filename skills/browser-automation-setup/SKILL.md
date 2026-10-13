@@ -5,6 +5,8 @@ description: "Use at the start of any multi-step browser automation task driven 
 
 # Browser automation setup
 
+Needs: browser control
+
 ## The common failures
 
 1. **Screenshot timeouts.** The screenshot call times out ("renderer may be frozen") while clicks, typing and script evaluation still work. Browsers stop producing frames for hidden tabs, so a buried or minimized tab cannot be captured.

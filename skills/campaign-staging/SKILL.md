@@ -1,9 +1,11 @@
 ---
 name: campaign-staging
-description: Use when qualified leads and approved copy need to go into a sending tool such as Smartlead or Instantly. Decides first whether a new campaign is warranted or the leads belong in an existing one, then configures, imports and verifies the campaign by reading it back, and stops before launch. A human launches.
+description: "Use when qualified leads and approved copy need to go into a sending tool such as Smartlead or Instantly. Decides first whether a new campaign is warranted or the leads belong in an existing one, then configures, imports and verifies the campaign by reading it back, and stops before launch. A human launches."
 ---
 
 # Campaign staging
+
+Needs: browser control
 
 Sending tools say "ok" to things they didn't do. An import can return success and attach no leads. A setting can save and then lock in the wrong state once the campaign leaves draft. A new campaign can be created for every batch until nobody can compare anything. Staging means the campaign is configured and every part of it has been read back and checked. Launching is a separate decision that belongs to a human.
 

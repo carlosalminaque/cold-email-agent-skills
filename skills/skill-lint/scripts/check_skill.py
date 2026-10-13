@@ -26,7 +26,7 @@ try:
     except yaml.YAMLError as e:
         errs.append("frontmatter is not valid strict YAML (quote the description if it contains ': '): " + str(e).splitlines()[0])
 except ImportError:
-    if re.search(r"^description:[ \t]*[^\"'].*: ", fm, re.M):
+    if re.search(r"^description:[ \t]*(?![ \t\"']).*: ", fm, re.M):
         errs.append("unquoted description contains ': ' (invalid YAML for strict installers); wrap it in double quotes")
 name = re.search(r"^name:[ \t]*(.*)$", fm, re.M)
 desc = re.search(r"^description:[ \t]*(.*)$", fm, re.M)

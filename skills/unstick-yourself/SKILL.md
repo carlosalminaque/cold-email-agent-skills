@@ -1,9 +1,11 @@
 ---
 name: unstick-yourself
-description: Use when about to stop early, about to say a capability is not available, about to ask the human to redo work the agent could do, or about to blame an outage on something untestable such as propagation lag or the vendor's side. Records the exact symptom, lists several causes tied to what recently changed, tests them cheapest first, and resumes the original task as soon as the blocker is gone.
+description: "Use when about to stop early, about to say a capability is not available, about to ask the human to redo work the agent could do, or about to blame an outage on something untestable such as propagation lag or the vendor's side. Records the exact symptom, lists several causes tied to what recently changed, tests them cheapest first, and resumes the original task as soon as the blocker is gone."
 ---
 
 # Unstick yourself
+
+Needs: none
 
 An agent that hits a wall tends to stop with an explanation that sounds final but was never tested: "this tool is not available", "probably a transient blip", "must be on the provider's side". Each of these hands the work back to the human while real, cheap checks were still left. A blocker is only real once it has been proven. Until then it is a list of hypotheses to work through.
 

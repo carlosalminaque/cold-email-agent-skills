@@ -1,9 +1,11 @@
 ---
 name: campaign-weekly-review
-description: Use once a cold email campaign has been sending for at least a few days, roughly once a week per live campaign, or when someone asks how a campaign is doing. Runs a deliverability check, a reply-category review with a positive-reply rate, and a short retro, then writes one dated note, so drift is caught before it is loud.
+description: "Use once a cold email campaign has been sending for at least a few days, roughly once a week per live campaign, or when someone asks how a campaign is doing. Runs a deliverability check, a reply-category review with a positive-reply rate, and a short retro, then writes one dated note, so drift is caught before it is loud."
 ---
 
 # Campaign weekly review
+
+Needs: browser control
 
 Without a recurring check, problems surface only when someone happens to ask or something breaks loudly: a domain on a blocklist for days, a reply category creeping up, an angle quietly dead. A short weekly pass catches drift early. Daily is too often: small campaigns produce noise day to day, and reading noise leads to bad changes.
 

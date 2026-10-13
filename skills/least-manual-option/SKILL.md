@@ -5,6 +5,8 @@ description: "Use whenever the agent is about to offer the person a choice betwe
 
 # Least manual option
 
+Needs: none
+
 ## The problem
 
 An agent reaches a fork, "you could check this yourself, or I could hand it to another agent", and presents it as an open choice when one option is plainly less work for the person. The answer is always going to be "whichever one doesn't need me". Asking wastes their attention and stalls the work.

@@ -1,9 +1,11 @@
 ---
 name: deliverability-audit
-description: Use before a sending domain's first real cold email, weekly while campaigns run, and whenever replies drop, bounces rise, mail lands in spam or a blocklist is suspected. Checks SPF, DKIM and DMARC by DNS lookup, mailbox provider reputation tools, compliance basics (opt-out and postal address), bounce and complaint rates from send records, and gives a first-response order for a live incident.
+description: "Use before a sending domain's first real cold email, weekly while campaigns run, and whenever replies drop, bounces rise, mail lands in spam or a blocklist is suspected. Checks SPF, DKIM and DMARC by DNS lookup, mailbox provider reputation tools, compliance basics (opt-out and postal address), bounce and complaint rates from send records, and gives a first-response order for a live incident."
 ---
 
 # Deliverability audit
+
+Needs: local shell
 
 New sending domains have no reputation to fall back on. A broken record or a bounce spike in the first week can do lasting damage. The most common failure is not a missing check, it is a checklist that existed and was never run before launch.
 

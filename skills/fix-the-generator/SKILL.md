@@ -1,9 +1,11 @@
 ---
 name: fix-the-generator
-description: Use when a specific flaw is pointed out (a wrong word, a bug, a bad line, a broken assumption) and the fix is about to be a single-spot patch, and before proposing the first solution that comes to mind. Name the general pattern, sweep the whole surface for other instances and fix them in one pass, and when new kinds of fault keep arriving, find what in how the system is built keeps producing them.
+description: "Use when a specific flaw is pointed out (a wrong word, a bug, a bad line, a broken assumption) and the fix is about to be a single-spot patch, and before proposing the first solution that comes to mind. Name the general pattern, sweep the whole surface for other instances and fix them in one pass, and when new kinds of fault keep arriving, find what in how the system is built keeps producing them."
 ---
 
 # Think past the symptom
+
+Needs: none
 
 A flagged problem is usually one instance of a pattern. Fixing only the flagged instance leaves the rest live, to be found one at a time by whoever has to keep flagging them.
 

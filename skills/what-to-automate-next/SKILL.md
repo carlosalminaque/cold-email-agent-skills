@@ -5,6 +5,8 @@ description: "Use when the person asks what to automate next, what is worth buil
 
 # What to automate next
 
+Needs: none
+
 The point of this skill is restraint. Its default answers are: stop doing that entirely, lowest autonomy, no AI if a script works, and ship one thing.
 
 Run it when there is real evidence of repeated manual work: after an audit, during an active build phase, or when the person names a recurring annoyance. Not on a schedule for its own sake.

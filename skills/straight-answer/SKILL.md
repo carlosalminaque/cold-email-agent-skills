@@ -5,6 +5,8 @@ description: "Use when the person asks for a real opinion or a pick instead of a
 
 # Straight answer
 
+Needs: none
+
 Two related asks, one shape. Either the person floats an idea and wants a candid read on it, or an agent has laid out options and the person wants the agent's own pick. Both get the answer first, the reason second, and no menu.
 
 ## The response shape

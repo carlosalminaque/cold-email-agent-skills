@@ -5,6 +5,8 @@ description: "Use whenever two or more AI agents (for example Claude and Codex, 
 
 # Multi-agent skill sync
 
+Needs: local shell
+
 ## The failure this fixes
 
 When two agents work one system, each with its own skill files and notes, the copies drift. One agent learns a sourcing rule the other never gets. One finds a root cause and fixes only its own notes, so the other keeps acting on the stale version. The mistake is treating "update my copy" as the whole job when the real job is "update the shared rule".

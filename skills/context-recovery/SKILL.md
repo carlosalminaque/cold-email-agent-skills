@@ -1,9 +1,11 @@
 ---
 name: context-recovery
-description: Use right after a session resumes from an automatic compaction or summary, and whenever the human suspects the agent is acting on a stale summary instead of what was really said. States the planned next step, offers to verify, rereads the last real messages in the rendered conversation, re-checks live state, and reports only what was actually there.
+description: "Use right after a session resumes from an automatic compaction or summary, and whenever the human suspects the agent is acting on a stale summary instead of what was really said. States the planned next step, offers to verify, rereads the last real messages in the rendered conversation, re-checks live state, and reports only what was actually there."
 ---
 
 # Context recovery after compaction
+
+Needs: none
 
 When a long conversation is compacted, the agent continues from a summary written by a separate process. That summary is lossy. It tends to over-weight the last few tool calls before the cut, even if the human had already dropped that thread. The agent then picks up an abandoned side task as the main one, or asks the human to explain again what is still sitting a few messages up. The source of truth is the conversation itself, not the summary.
 

@@ -1,9 +1,11 @@
 ---
 name: check-before-you-claim
-description: Use before stating anything as fact that a source exists to settle - how an API or library behaves, what a governing rule file says, whether a change is live, what a system did. Read the actual current source, try a second path when the first is inconclusive, and label anything still unchecked as unchecked. Covers API folklore, stale memory of internal rules, guesses reported as findings, and "done" claimed from a written intention.
+description: "Use before stating anything as fact that a source exists to settle - how an API or library behaves, what a governing rule file says, whether a change is live, what a system did. Read the actual current source, try a second path when the first is inconclusive, and label anything still unchecked as unchecked. Covers API folklore, stale memory of internal rules, guesses reported as findings, and \"done\" claimed from a written intention."
 ---
 
 # Verify before claiming
+
+Needs: none
 
 An agent's confidence is not evidence. Four versions of the same failure show up again and again:
 

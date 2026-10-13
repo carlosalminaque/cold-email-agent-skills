@@ -5,6 +5,8 @@ description: "Use right before a plan, spec or build handoff prompt is marked fi
 
 # Second opinion
 
+Needs: none
+
 A session that wrote a plan cannot fully review it: whatever assumptions produced the plan are still in its context when it reads it back. This skill runs the critique from a clean context instead.
 
 ## When to run it

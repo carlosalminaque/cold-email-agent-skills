@@ -5,6 +5,8 @@ description: "Use when building a .docx with the docx JavaScript library (docx-j
 
 # docx tables across page breaks
 
+Needs: local shell
+
 ## The defect
 
 When a table lands near the end of a page, three things can go wrong at once:

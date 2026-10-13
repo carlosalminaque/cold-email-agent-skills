@@ -5,6 +5,8 @@ description: "Use when someone hands over a pile of raw material (uploads, links
 
 # Synthesize messy input
 
+Needs: none
+
 Some people hand over a lot of raw material at once and expect the agent to do the thinking they have not spelled out. Answering only the literal question undersells what they asked for.
 
 ## Steps

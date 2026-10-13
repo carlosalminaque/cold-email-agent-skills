@@ -1,9 +1,11 @@
 ---
 name: troubleshooting-order
-description: Use when troubleshooting stalls, the same request keeps coming back with no progress, a tool's output conflicts with what is visible, or a capability that should work fails. Separates what was checked from what was assumed, tests the common hidden causes in a fixed order, retries with a fresh handle before calling anything unavailable, takes the smallest probe that tells the theories apart, and checks the result from outside.
+description: "Use when troubleshooting stalls, the same request keeps coming back with no progress, a tool's output conflicts with what is visible, or a capability that should work fails. Separates what was checked from what was assumed, tests the common hidden causes in a fixed order, retries with a fresh handle before calling anything unavailable, takes the smallest probe that tells the theories apart, and checks the result from outside."
 ---
 
 # Troubleshooting order
+
+Needs: none
 
 Most stalled debugging is not a hard problem. It is an easy problem worked from a wrong fact. A screenshot from an hour ago, another agent's report, or the agent's own first guess gets treated as true, and every later step builds on it. The fix is a fixed order of work that keeps checked facts and assumptions apart, and tests the boring causes before the clever ones.
 

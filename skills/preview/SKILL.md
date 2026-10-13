@@ -5,6 +5,8 @@ description: "Use when someone types /preview, says show me a preview, preview i
 
 # Preview
 
+Needs: local shell
+
 Render and screenshot the current state of a page so the person sees it without spelling out the steps every time.
 
 ## Pick the file

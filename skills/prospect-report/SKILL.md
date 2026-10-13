@@ -5,6 +5,8 @@ description: "Use when a batch of prospect companies has been sourced or qualifi
 
 # Prospect report
 
+Needs: browser control
+
 Turns a batch of sourced companies into something a person actually reads before deciding what happens next. Not a spreadsheet dump: a report with real screenshots of each company's site, profile page and signal source, so a claim can be checked at a glance instead of by reopening ten tabs.
 
 ## Why the live re-check matters

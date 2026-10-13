@@ -5,6 +5,8 @@ description: "Use when someone wants to mine outside cold email, lead generation
 
 # Tactics gap analysis
 
+Needs: video access
+
 Compare what outside experts teach against what you actually do, and turn the difference into a ranked, honest list: what you already do, what is a real gap, what conflicts with your rules, and what to ignore.
 
 ## Step 1: curate the source list lightly

@@ -5,6 +5,8 @@ description: "Use whenever building, editing or reviewing a spreadsheet that a p
 
 # Spreadsheet cell rules
 
+Needs: local shell
+
 A sheet can hold correct data and still read as broken. These rules catch the two most common ways: cells that look empty or contradictory, and wrapped text that gets cut off by the row height. Neither shows up in a check of the raw values.
 
 ## Rule 1: no blank or lone-dash cells by default

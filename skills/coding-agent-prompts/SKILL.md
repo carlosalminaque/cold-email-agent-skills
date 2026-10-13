@@ -5,6 +5,8 @@ description: "Use whenever drafting a prompt that a coding agent (Codex, Claude 
 
 # Coding agent prompts
 
+Needs: none
+
 Coding agents follow prompts literally and stop when something required is missing. Each rule below closes a gap that made a real run stall, fake progress, or cut valid work.
 
 ## 1. Give the rule, never a count, as the scope

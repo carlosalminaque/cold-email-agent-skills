@@ -1,9 +1,11 @@
 ---
 name: visual-concepts
-description: Use when the human does not like how something looks (a page section, hero, slide, video frame, email layout), asks for options or concepts, says make it look good or something completely different, or rejects a first set of variants. Builds four to six concepts that differ in structure, not just color, including any visual the human described used literally, in the real styles read live, checked for contrast and at phone width, each labelled in one line with a recommendation. Never publishes.
+description: "Use when the human does not like how something looks (a page section, hero, slide, video frame, email layout), asks for options or concepts, says make it look good or something completely different, or rejects a first set of variants. Builds four to six concepts that differ in structure, not just color, including any visual the human described used literally, in the real styles read live, checked for contrast and at phone width, each labelled in one line with a recommendation. Never publishes."
 ---
 
 # Visual concepts
+
+Needs: local shell
 
 People react to rendered visuals, not descriptions. When a design feels wrong, three color variants of the same layout do not help: the problem is usually the structure, and the human wants to see genuinely different ways of doing it and point at one. A rejected first round is a signal that the variants were too similar, not that the human is hard to please.
 

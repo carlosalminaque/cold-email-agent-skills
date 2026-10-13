@@ -5,6 +5,8 @@ description: "Use before and immediately after any write to an existing document
 
 # Full-replace write safety
 
+Needs: none
+
 ## The trap
 
 Many document tools have only one write: replace the entire document. Sending only a new or changed section silently deletes everything else. No warning, no diff, no confirmation.
