@@ -1,5 +1,6 @@
 {
   "skills": [
+    "agent-permission-guards",
     "approved-reply-send",
     "browser-automation-setup",
     "browser-payload-transfer",
@@ -65,7 +66,8 @@
     "visual-plan-and-recap",
     "voice-recording-check",
     "what-to-automate-next",
-    "whole-set-check"
+    "whole-set-check",
+    "whole-system-audit"
   ],
   "excludedLocalOnly": []
 }
