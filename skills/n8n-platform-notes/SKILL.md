@@ -40,7 +40,7 @@ Scripted `fetch('/rest/...')` from a tab on the heavy editor canvas can hang unt
 
 - The public API (`/api/v1/workflows`) with an API key and the internal path (`/rest/workflows/{id}`, same-origin session cookie) are different code paths. One can fail while the other works.
 - If a valid public-API write returns a bare 500 while reads work and bad payloads correctly get 400, suspect the instance, not your payload or key. Try the internal path or an editor save before re-diagnosing credentials. An internal save still needs a publish.
-- On the public API, `/activate` is deprecated in favor of `/publish`. On the internal path it can be the reverse. Do not mix the two.
+- Which publish route works differs by instance. The public API's `/activate` is often described as deprecated in favor of `/publish`, but `/activate` with a `versionId` has been verified as the working route on an instance where the `/publish` advice was not. The internal path can differ again. Test which route your instance serves on a throwaway inactive workflow before a live change, do not mix paths inside one publish, and let the GET decide.
 - Valid: "Public write 500s, internal PATCH works; switching paths."
 - Invalid: rotate the API key three times for a 500 on a valid payload.
 
@@ -54,6 +54,7 @@ The editor's AI Assistant edits workflows through n8n's own API. It avoids canva
 
 - Name the exact source and target nodes, and for IF or Switch nodes the output branch. Ask it to show the diff first and touch nothing else.
 - It works one workflow at a time in a live chat; it cannot do unattended or batch work.
+- A "Writing file" status means it is still running. Do not close or reload the tab or open a second conversation, because that ends the run. Wait for a final reply, then confirm with a fresh read of the workflow JSON.
 - Verifying edges: canvas edge labels are keyed by node id, not name. Filtering by name returns zero even when the edge exists. Resolve each node's id from the DOM and filter by that.
 
 ## A false session-expired redirect
@@ -62,7 +63,7 @@ If the workflow list loads with real data but opening one specific workflow send
 
 ## HTTP 200 is not success
 
-Some backends (Google Apps Script is a common one) return HTTP 200 carrying an error or lock-timeout HTML page, and the HTTP Request node treats it as success. Validate the body shape on every such call: expected JSON, expected fields, matching ids. Treat anything else as failure, retry transient errors with backoff and jitter, and on exhaustion alert and fail the execution.
+Some backends (Google Apps Script is a common one) return HTTP 200 carrying an error or lock-timeout HTML page, and the HTTP Request node treats it as success. Validate the body shape on every such call: expected JSON, expected fields, matching ids. Treat anything else as failure, retry transient errors with backoff and jitter, and on exhaustion alert and fail the execution. A retry keeps the original request identity and timestamps, and never repeats an external action that already went out (such as an email) just because a later record update failed.
 
 - Valid: node checks `body.ok === true` and the returned id matches, else throws.
 - Invalid: node checks only that the status code is 200.

@@ -1,6 +1,6 @@
 ---
 name: preview
-description: "Use when someone types /preview, says show me a preview, preview it, or asks what a recently edited web page, HTML file, deck or document looks like now. Renders the right file in a headless browser, screenshots it, crops a long page into readable sections, checks them for rendering problems, and sends the images with a one-line caption. Also use proactively right after any non-trivial visual edit to a page or HTML file, without waiting to be asked. Not for summarizing what changed (use a recap) or for designing something not yet built (use a mockup)."
+description: "Use when someone types /preview, says show me a preview, preview it, or asks what a recently edited web page, HTML file, deck or document looks like now. Renders the right file in a headless browser, screenshots it, crops a long page into readable sections, checks them for rendering problems, and sends the images with a one-line caption. Runs on direct request or after an offer the person accepted, never on its own. Not for summarizing what changed (use a recap) or for designing something not yet built (use a mockup)."
 ---
 
 # Preview
@@ -13,7 +13,7 @@ Render and screenshot the current state of a page so the person sees it without 
 
 1. If the person names a file or page, use it.
 2. Otherwise use whatever was most recently edited in this conversation. If one change touched several pages (a shared stylesheet), preview the page most central to the change, or all of them if the change is visible everywhere.
-3. No recent edit to go on: use the main page of the project (usually the homepage).
+3. If several different targets are still possible, ask one short question. Never fall back to an unrelated page such as the homepage.
 
 Confirm the file path exists before rendering; layouts move between sessions.
 Valid: "preview it" right after editing pricing.html renders pricing.html.
@@ -21,7 +21,9 @@ Invalid: asking "which file?" when the last edit makes it obvious.
 
 ## Render
 
-Use Playwright with whatever Chromium is installed. If a browser binary is already present, point at it rather than downloading a new one.
+Use Playwright with whatever Chromium is installed. If a browser binary is already present, point at it rather than downloading a new one. Find the runtime and paths each time instead of hard-coding them.
+
+For a signed-in page, use the real signed-in browser session and the visible screen. Never pull out cookies, tokens or authorization headers, and stop before any step that would send, publish, buy, delete or do anything else irreversible.
 
 ```js
 const { chromium } = require('playwright');
@@ -56,6 +58,8 @@ for i in range(n):
 
 ## Check before sending
 
+After scrolling to a component, wait for its position to settle, then open the saved image and confirm it really shows that component. A DOM match or a screenshot hash proves nothing, and a failed capture leaves the check open.
+
 Look at every section yourself. Flag anything genuinely broken (missing image, overlapping text, layout collapse) instead of sending it silently. Embedded PDF frames often render blank in headless browsers; that is expected, not a bug.
 Valid: "Section 3: the logo failed to load" alongside the images.
 Invalid: sending a crop with overlapping headings and no comment.
@@ -68,9 +72,9 @@ Invalid: a paragraph recapping each section the person can already see.
 
 Then delete the temporary screenshots and render script.
 
-## Proactive use
+## When it runs
 
-Right after a visual edit lands, just show the preview. That moment is unambiguous, so asking first only adds a round trip.
+Only when the person asks directly, or after they accept an offer made elsewhere. This skill does not offer itself or run after an edit on its own.
 
 ## Don't
 
