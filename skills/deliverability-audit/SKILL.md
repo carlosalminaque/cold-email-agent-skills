@@ -49,7 +49,29 @@ Read from what was sent, never from a dashboard summary alone:
 - spam complaints where the provider reports them;
 - reply rate per inbox: one inbox far below the others usually means that inbox is landing in spam.
 
-Set your own thresholds before launch and write them in the source, for example: pause an inbox above a set bounce rate, pause a list source above a set bounce rate.
+Set your own thresholds before launch and write them in the source, for example: pause an inbox above a set bounce rate, pause a list source above a set bounce rate. Example values only, tune them to your own data: above 3% bounce, pause the inbox for new sends and go to incident response; 1 to 3%, flag and watch. Zero replies after 20 or more sends is worth investigating, but a small sample is not conclusive.
+
+## 4b. Idle capacity and filters
+
+- Start every capacity read with paid inboxes that sit on no live campaign. List each, say why it is not sending, and either put it to work or name the one thing stopping it. Never mention idle paid capacity in passing at the end.
+- An inbox that never sent cold is ready on warmup alone (example values, use your warmup tool's own health metrics): about 21 days of warmup, reputation at least 95%, no bounces. Start near 5 sends a day and step up as clean sends build. An inbox that already sent cold needs a history test instead: 14 days of sending with bounces under 2%.
+- Any filter a rule sets on inboxes, leads or domains must name what it excludes before it ships, and be run against the live account list. If it shuts out paid, ready capacity, change the rule or say why.
+- Each actively sending domain should have a backup domain bought and mid-warmup. Flag a missing one as a real gap with a concrete recommendation. Never buy without explicit approval, and never claim a backup exists when it does not.
+- Automation must not silently overwrite a from-name or signature; treat them as read-only unless a person asks, and check this whenever a workflow touches inbox settings.
+- Do not retire, detach or change forwarding on an inbox within 60 days of a send into a region with strict sender or privacy rules (for example the EU or UK); check its last such send first and keep it if recent.
+
+## 4c. Pre-launch checklist
+
+Report each item as Confirmed, Not confirmed or Not applicable, never as a summary:
+
+- Open tracking is off in the live template (check the template, not the platform default).
+- The first touch is genuinely plain text, verified from the delivered content type in the raw headers.
+- Tracking domain is clean and custom-branded.
+- No no-reply sender; several sender identities with real names and signatures.
+- SSL and MX records on every sending domain; the sending domain redirects to the real site.
+- Weekday-only sending.
+- Every step of every campaign, follow-ups included, carries the full sender footer (name, postal address, web contact, reply-to-unsubscribe line). Read back every step before launch or resume, not just step 1.
+- Items no earlier check covers (suppression enforcement, greylist retry) are flagged open, never marked Confirmed unchecked.
 
 ## 5. Rendering and format
 
@@ -64,6 +86,17 @@ Set your own thresholds before launch and write them in the source, for example:
 4. **Bounce spike:** check the list source first (see `pre-send-list-check`); suppress the bounced addresses everywhere.
 5. **Spam placement:** test-send from the affected inbox, check authentication headers in the received message, check blocklists.
 6. **Resume slowly,** at lower volume, and watch the same numbers for several days.
+
+Other cases:
+
+- **Warmup stalled:** a slow ramp on an inbox a few weeks old is usually just time. A long stall escalates as a possible inbox-level problem.
+- **Promotions-tab placement:** check send pace, tracking pixels, heavy HTML and promotional-sounding copy.
+- **Blacklist:** follow that list's delisting process. It does not resolve itself; pause sending until delisted.
+- **Dropped replies:** rule out list causes and thin samples before blaming the inbox.
+
+A seed-testing service run weekly is a more reliable placement check, but it is recurring spend: get approval and re-confirm current pricing first, never quote old prices. If your sending platform has a placement test, run it before scaling volume.
+
+Report per domain and inbox what was checked, passed and flagged, with a specific action per flag. Log each flag as a lesson, and record the result wherever you track open work.
 
 ## Valid and Invalid
 

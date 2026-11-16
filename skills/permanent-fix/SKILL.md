@@ -27,13 +27,12 @@ Every mistake should happen once. "Lesson learned, I'll be more careful" is not 
 
    No hypothetical lessons.
 
-2. **Fix each item, strongest first.**
+2. **Fix each item, strongest first.** Before adding anything, ask what to remove: a duplicate rule, a rule a check already enforces, a copy that drifted from its source. A deletion or merge counts as a fix.
 
    a. **Make it impossible.** Can a check, test, hook, lint rule or guard stop it happening again? Build it and run it once to show it catches the case. If another agent or person owns that code, write the exact prompt or ticket for them.
 
-   b. **Otherwise, a rule, but only if it earned one.** Earned means the same problem appears earlier (in memory, the issue tracker, an earlier retro) or a test proves the current guidance wrong. Then add or merge one rule of two or three lines, with one Valid and one Invalid example, into the file that owns the topic.
-
-   c. **Otherwise, log only.**
+   b. **Otherwise, a rule, but only if it earned one.** Earned means the same problem appears earlier (in memory, the issue tracker, an earlier retro) or a test proves the current guidance wrong. Also name one other fault from the last month that the new rule would have prevented: one instance is a log line, two is a pattern. Then add or merge one rule of two or three lines, with one Valid and one Invalid example, into the file that owns the topic. Keep rules short and free of narrative.
+   c. **Otherwise, log only.** A one-off with no recurrence risk is a valid outcome: `Permanent fix: none, logged: one-off because <reason>`. So is `deleted <rule>` or `merged into <file>`.
 
 3. **Search before adding.** Grep the skills, agent instructions and memory for the same lesson. If a similar rule exists, sharpen it or merge into it. Never add a second copy. Rules hold operations, not incident stories.
 
@@ -43,16 +42,22 @@ Every mistake should happen once. "Lesson learned, I'll be more careful" is not 
 
 6. **A workaround is unfinished** until it has a check or an owning rule.
 
-7. **Never widen permissions.** A retro does not grant the agent new rights. Sends, spend, publishing, credentials and deletion stay with the human.
+7. **Track corrections as records.** Each correction opens a tracked record in the same turn, in whatever tracker you use. A record moves through accepted, built (an independent test passes), proved, closed. An explanation closes nothing, and the retro does not finish while a record it opened has no artifact attached. When the same class of mistake comes back, mark it as a repeat: the fix must then go to the underlying cause (the habit, tool or design that keeps producing it), not another rule on the symptom.
+
+8. **Files you cannot edit.** If a skill or file belongs to someone else or is read-only here, write the proposed change into a dated updates file for its owner rather than dropping it.
+
+9. **Never widen permissions.** A retro does not grant the agent new rights. Sends, spend, publishing, credentials and deletion stay with the human.
 
 ## Reporting a correction
 
-Every reply to a correction ends with two lines:
+Every reply that reports any problem, not only a correction, ends with the first line below, placed before the closing RETRO DONE line (`built <what>`, `queued <item>` or `not possible because <reason>`). A reply to a correction adds the second:
 
 ```
 Permanent fix: <what removes the cause>, <built | in the prompt below | not possible, because ...>
-Fixed in: <the one file that now owns it>
+Fixed in: <place> (done, binds <who>), <place> (not needed, <why>), <place> (not done, <what it takes>)
 ```
+
+"Fixed in" lists every place that acts on the rule, meaning every agent, script or file that could repeat the mistake, not just the one file that owns it. Places that needed no change are listed too, with the reason. Next to each place that was changed, say who it binds.
 
 ## Valid and Invalid
 
@@ -62,11 +67,16 @@ Fixed in: <the one file that now owns it>
 
 ## Finish
 
-End with exactly one line:
+The RETRO DONE line is the last line of the reply, after any Permanent fix and Fixed in lines. End with exactly one line:
 
-`RETRO DONE: <n> items, <k> fixes, <m> rules, <j> logged.`
+`RETRO DONE: <n> items, <k> fixes, <m> rules, <r> removed, <j> logged.`
+
+`<r>` counts what the retro took away: rules deleted or merged, checks or jobs dropped. A retro should not leave the system bigger than it found it. When fixes plus rules exceed removals, append `; net add because <reason>`.
 
 Say above it which items are permanent and which remain stopgaps.
+
+- Valid: `RETRO DONE: 5 items, 2 fixes, 2 rules, 1 removed, 5 logged; net add because both rules cover a new tool with no existing home.`
+- Invalid: `RETRO DONE: 5 items, 2 fixes, 2 rules, 5 logged.` (nothing counted as removed, no reason for the growth)
 
 ## Before and after
 

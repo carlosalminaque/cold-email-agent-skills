@@ -19,4 +19,18 @@ Some people hand over a lot of raw material at once and expect the agent to do t
 6. **End with a recommendation.** What to do first, second and third, and what happens if they say go. Do not build it unasked.
 7. **Thorough, not a wall of text.** Take the space it needs, in short labelled sections.
 
-Valid: "You're really asking whether this replaces your current reply process. It doesn't: two of its five ideas fit, here is why, do X first." Invalid: a summary of each upload with no answer.
+## Retrospectives, histories and audits
+
+When the ask is what happened, why something took so long, or a timeline, build the inventory before any conclusion:
+
+1. **List the whole record first.** Every document, note, chat, handoff and log you can reach, paged back as far as it goes. Group it into workstreams with first and last dates, counts, key dated events and blockers.
+2. **Keep the requester's theories out of any brief you give helper agents.** A brief that lists their guesses comes back confirming them. Give helpers a neutral brief, then test the theories against the finished inventory.
+3. **Run a coverage check before delivering.** Compare the workstreams in the inventory with the narrative. If a sizeable workstream is missing, add it or say why it is left out.
+4. **A drafted or prepared item is not a launched one.** Take dates for sends, launches and releases from the record of the event (sent counts, release readbacks), not from when the item was drafted.
+
+## Valid and Invalid
+
+- Valid: "You're really asking whether this replaces your current reply process. It doesn't: two of its five ideas fit, here is why, do X first."
+- Invalid: a summary of each upload with no answer.
+- Valid (invented example): "Coverage check: help center 22 files, onboarding emails 9, billing export 6, each one placed under 'Where the hours went'."
+- Invalid: a retrospective whose sections are the requester's own four guesses, each marked right or wrong, while the largest workstream in the record (the help center, 22 files) never appears.

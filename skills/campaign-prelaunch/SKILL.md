@@ -11,11 +11,13 @@ Get a cold email campaign fully staged and ready to fire, without firing it. The
 
 Raise questions and a plain recommendation at each real decision point (a sourcing result, a tool failure, a fork in approach) as you go. Do not run the whole thing silently and report only at the end.
 
+Track every numbered step as `not started`, `verified complete` or `blocked`, explicitly. A step is complete only with evidence from this run.
+
 ## Step 0: prove the lookup tools are live
 
 Before sourcing, make one real, free or cheap call to each enrichment or address lookup tool you will use. A "connected" status in a settings list is not proof; integrations often show connected while the actual session has expired.
 
-1. **Primary lookup tool first.** If the person has set a provider order (for example, the cheaper or already-paid provider first, the second provider only for misses), check the primary one and record its balance. If it fails, stop lookup work, say so in the first status line, and do not quietly switch the order without a yes.
+1. **Primary lookup tool first.** If the person has set a provider order (for example, the cheaper or already-paid provider first, the second provider only for misses), check the primary one and record its balance. If it fails, stop lookup work, say so in the first status line, and mark the affected candidates as blocked on that tool. Do not quietly switch the order without a yes; only misses go to the secondary.
 2. **Secondary tool.** Call a credit-check or similar no-cost endpoint.
 3. **If a tool's session has expired,** tell the person where the reconnect button is and ask them to click it. Then retest. A reconnect does not always fix a session that was already running; if the retest still fails, say a fresh session may be needed, and note what waits on it rather than looping retries.
 
@@ -29,11 +31,18 @@ Valid: "Primary lookup answered, balance 3,180. Secondary failed: session expire
 
 Valid: "Lookups: primary 40 sent, 31 found (balance 3,180 to 3,140); secondary 9 misses sent, 4 found." Invalid: "Found emails for most of the list."
 
+### Sourcing is complete only with new discovery
+
+- Before marking this step complete, show evidence of new discovery in this run: which channel or query ran, when, and which new candidates it returned.
+- (Does not apply to a person or company they already named: the evidence there is the confirmed target and verified contact details.) Leads already marked qualified from an earlier session do not satisfy the step, however recent, unless the person said in this run to reuse them. Reading old rows and calling them sourced is the failure this rule exists to stop.
+- If you skip, shortcut or substitute any step for any reason (cost, ambiguity, a precondition that seemed to apply), say so plainly before moving on, not only when asked later. Label such a run exactly, for example "mechanics dry run on existing rows, no fresh sourcing", never "prelaunch complete".
+
 ## Step 2: set up the campaign
 
 - Run any acceptance gate the person uses (fit check, capacity check, offer choice) before building anything.
 - Draft the sequence (first email and follow-ups) with the person's own copy rules. This is always a draft for their approval.
 - Configure the campaign: details, sequence steps, schedule, sending accounts, lead import.
+- If your sending tool has an API, import leads through it, not its CSV file picker. Browser automation cannot drive the native operating system file dialog.
 - After each step, verify it landed by reading the live state (the lead list actually shows the records, the steps actually saved). The UI moving to the next screen is not proof.
 
 ### Per-lead copy does not need one campaign per lead

@@ -35,13 +35,13 @@ Work through each one; several can feed the same idea.
 
 ## Steps
 
-1. **Read your one source** for who you target and how you qualify them. Every idea must still pass those gates. A narrow list changes who and when, not how carefully leads are qualified. This table is not qualification.
+1. **Read your one source** for who you target and how you qualify them. Every idea must still pass those gates. A narrow list changes who and when, not how carefully leads are qualified. This table is not qualification. Two scopes: for your own campaigns every lead clears the gates; if you run campaigns for others, the ideas come from that client's intake, still pass the same gates, and the client approves the chosen three on the brief in writing.
 2. **Build the table.** 15 to 20 rows, columns: `# | Method | List filters | Wide or narrow | What the first email asks or offers | Sourceable?` See `references/table-example.md`.
 3. **Keep every first email simple:** short, one easy question, one small useful offer, nothing about what was looked up.
 4. **Check every filter can be sourced** with the tools you actually have. Drop any idea that needs a filter no tool can query, and don't stack more narrow filters than those tools handle.
 5. **Check two objections separately.** Proof that prospects understand the category rules out an education asset only. It says nothing about whether they trust the provider, which a founder video or process walkthrough addresses.
 6. **Mark your recommended three,** with one line of reasoning each, so they can go straight onto a one-page brief.
-7. **Hand it over.** A human picks (see `outreach-experiments` if volume allows a test). Sourcing and staging follow in `lead-qualification` and `campaign-staging`.
+7. **Hand it over.** A human (or the client, for a client's campaign) picks (see `outreach-experiments` if volume allows a test). Sourcing and staging follow in `lead-qualification` and `campaign-staging`.
 
 ## Valid and Invalid
 

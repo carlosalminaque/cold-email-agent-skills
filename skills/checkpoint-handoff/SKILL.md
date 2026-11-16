@@ -32,7 +32,7 @@ Do not ask before writing one. It is cheap and does not stop the work.
    - **Questions** for the human, each answerable in one line.
    - **Next actions:** a flat checklist, each line tagged with who acts.
 
-2. **Keep one open-items list.** One file, open items only, one line each: what, who acts next, date raised. Closing an item means deleting the line and adding one line to a done log with the proof. No other doc keeps its own checklist; their open items go into this list.
+2. **Keep one open-items list.** One file, open items only, one line each: what, who acts next, date raised. Closing an item means deleting the line and adding one line to a done log with the proof. Never tick a box and leave the line standing. No other doc keeps its own checklist; their open items go into this list.
 
 3. **Stamp live-state claims.** Each line that states how a live system behaves carries "checked on date, how" or "unchecked". Re-check an unchecked claim before repeating it.
 
@@ -40,11 +40,37 @@ Do not ask before writing one. It is cheap and does not stop the work.
 
 5. **Write some facts immediately,** not at the next checkpoint: a changed standing rule, a retired component, a capability moving between agents, a new platform limit, a shared schema change. Ask: would another session acting right now make a wrong call without this? If yes, write it now.
 
-6. **Before answering "what's left",** read the whole open-items list and any newer handoff files, reconcile with live state, and fix stale lines.
+6. **Write down unfinished work as unfinished.** Partly done or blocked work gets a line saying "not done, blocked on X". A bug found but not fixed gets written down too. Silence reads as "nothing happened here", and the next session will repeat or skip the work.
 
-7. **Keep working.** A checkpoint is a safety net, not a pause.
+7. **Record decisions where they belong.** A decision goes into the one file that owns its topic. If no file owns the topic yet, add an entry for it to your index of owners first. Do not park decisions in a new decisions file, a handoff note, or memory alone, because each of those becomes a second, drifting copy. The checkpoint's settled-decisions list names each decision with a pointer to its owning file.
 
-Durable facts that outlive one build (account URLs, which tools are in play, naming rules) belong in long-term memory or project docs. The checkpoint holds this build's moving state and points to those.
+8. **Before answering "what's left",** read the whole open-items list and any newer handoff files, reconcile with live state, and fix stale lines.
+
+9. **Keep working.** A checkpoint is a safety net, not a pause.
+
+Durable facts that outlive one build (account URLs, which tools are in play, naming rules) belong in long-term memory or project docs. The checkpoint holds this build's moving state and points to them instead of re-explaining them. Save such facts to your agent's persistent memory (or a notes file if it has none) as you find them on a multi-session project, but never put fast-changing build progress into memory: it goes stale and gets trusted.
+
+## Working in shared systems
+
+- Before editing a shared system or file, look for a note that another session is active there. If the note is ambiguous or the situation unclear, ask the human and hold off, even for a small change.
+- Read the target right before writing, and use its version marker or token if it has one, so a stale write cannot overwrite a concurrent edit.
+- A retired component that is still running (an active automation, a logged-in account, an endpoint still accepting traffic) is not proof it is in scope. Check the standing decisions. If it should be gone, switch it off and record that, rather than repairing it.
+
+## Resuming a dead or stuck session
+
+- Do not assume how far it got. A checkpoint can predate real work, and the session may have done more or less than it claimed.
+- Read its visible history if you can reach it. Where the history and the checkpoint disagree, say so and let the human break the tie.
+- Ask for the real-world state (what is actually live, what the human saw) before resuming any step that changes something.
+
+## Handing over to a new session
+
+- Read live state first, and stamp the handoff doc with the time of that last real read. Never present older reads as current.
+- Give the human exactly one short paste prompt. It points at the doc and tells the new session to re-read live state before trusting any line.
+- Cancel the old session's scheduled check-ins, so two coordinators never act at once.
+
+## Packaging an earlier answer as a file
+
+When asked to turn a previous answer into a document, use the content as already stated. No new research, no new claims, no re-deriving. Produce one self-contained file and do not restate its content in the reply.
 
 ## Valid and Invalid
 
@@ -53,6 +79,8 @@ Durable facts that outlive one build (account URLs, which tools are in play, nam
 - Valid: "What's left: 7 open items from the list, 2 marked unchecked and re-checked just now."
 - Invalid: answering "what's left" with the two items this chat happens to remember.
 - Invalid: a handoff doc with its own checkbox list that never reaches the shared list.
+- Valid: "Export job: not done, blocked on the missing API key. Found but not fixed: the date filter drops the last day."
+- Invalid: leaving the export job out of the checkpoint because nothing finished.
 
 ## Before and after
 

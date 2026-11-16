@@ -7,14 +7,19 @@ description: "Use to turn a build into one scannable visual page, either before 
 
 Needs: local shell
 
-A wall of text is hard to sanity-check. A diagram is not. This skill makes one HTML page that shows a change, either as a plan (before building) or as a recap (after building). Both modes share one visual language so they read as a matched pair.
+A wall of text is hard to sanity-check. A diagram is not. This skill makes one HTML page that shows a change, either as a plan (before building) or as a recap (after building). Plan and recap share one visual language so they read as a matched pair; Preview (below) is a third, lighter mode.
 
 ## Pick the mode
 
 - **Plan mode**: nothing is built yet. The page exists so the person can say "yes, that is what I meant" or "no, move that" before any code or config changes.
 - **Recap mode**: the change already happened. The page exists to show its impact, not just its appearance.
+- **Preview**: the person only wants to see what a page or file looks like right now, with no framing of what changed (see the Preview section near the end of this file).
 
-Skip both when one sentence covers the change fully.
+If it is unclear whether they want what changed or what it looks like now, ask in one line instead of guessing.
+
+Check first whether a more specific tool owns the job (a UI mockup of something not yet built, a live walkthrough, a test pass, a chart). Route to it rather than building a generic visual.
+
+Skip plan and recap when one sentence covers the change fully.
 Valid: a plan touching three services, a new database table and an approval step gets a plan page.
 Invalid: drawing a diagram for renaming one form label.
 
@@ -30,9 +35,24 @@ Invalid: every box the same style, so the reader cannot tell what changes.
 
 **Fit one screen of scanning.** If two diagrams are needed (data flow and a UI sketch), put them in labeled sections of the same file rather than nesting everything into one dense chart.
 
-**Deliver the live HTML, not a screenshot of it.** The page is the point: it scales, it can hold expandable details, and text stays selectable. Use a screenshot only if the HTML cannot be viewed.
+**Deliver the live HTML, not a screenshot of it.** The page is the point: it scales, it can hold expandable details, and text stays selectable. Use a screenshot only if the HTML cannot be viewed (Preview mode below sends images by design).
 Valid: send the .html file so it opens as a page.
 Invalid: flattening the page into a PNG out of habit.
+
+**Look at the render before delivering.** Open the finished page and view it. Never assume the code drew what you meant.
+
+**Branching diagrams need a real layout engine.** For flowcharts and decision trees, let a layout library compute the edge routing. Hand-placed connector lines are fine only for straight sequences.
+
+**Chart code gets its own guidance.** If the page contains a chart or graph, read any available data-visualization guidance (palette, mark styles) before writing chart code.
+
+**Copy from a reference by its pixels.** When recreating icons or colors from a reference image, crop and sample the file itself. Do not redraw from memory or guess hex values.
+
+## Offering a visual unasked
+
+Offer at natural moments only: a plan with three or more moving parts waiting for approval, or a finished structural change. Make the offer one line that names the output and why it helps, and build nothing until the person says yes.
+- Do not offer for trivial changes.
+- Remember declined offers per plan or work unit, and do not repeat the offer unless the plan changes materially. If you keep a running notes or handoff file, record it there.
+- Once an offer is accepted, build the visual directly; the building step never loops back into offering.
 
 ## Plan mode: what to include
 
@@ -53,10 +73,16 @@ After delivering, ask directly whether it matches the intent. Treat "no" as a pl
 
 ## Recap mode: what to include
 
+Fire it for finished changes with real structural surface area: new fields, nodes or files, changed routing, or more than a couple of files touched. Not for single-line or copy-only edits.
+
 1. **Before and after structure**, using the same existing-versus-new styling.
 2. **Schema and data impact, made obvious**: new columns, new fields, changed field meanings. This is the change hardest to spot in a text diff, so give it the most visual weight.
 3. **Contracts and boundaries**: what calls what now, what reads or writes which table now.
 4. **UI impact**, only if a live screen changed: annotated screenshots (box plus short caption), never bare images.
+
+When someone asks for screenshots of just-finished work, give the annotated recap, not a bare screenshot dump. If they ask specifically for a screenshot-based guide, the next paragraph applies instead.
+
+If the person asks for a screenshot-based guide, real annotated screenshots are required every time. When nothing live exists to capture (backend-only change, a plan not yet executed), ask what should be captured or say plainly that nothing exists yet. Never ship a diagram-only recap in its place.
 
 Recap safety rules:
 
@@ -74,6 +100,14 @@ Invalid: naming the most likely table as if confirmed.
 
 Work from the best source available: a real diff first, then a detailed report or handoff note, then a live click-through with fresh screenshots.
 
+## Preview: what it looks like now
+
+When asked to see a recently edited page or deck (or after a non-trivial visual edit, unasked), render it headlessly, cut long pages into sections of roughly 1200px height, and send the images with a one-line caption.
+
+Pick the target without asking when it can be inferred: the file named, else the file most recently edited, else the live front page. Do not re-render untouched pages.
+
+View each cropped section yourself before sending to catch rendering faults. Send all images in one message, then delete the temporary screenshots and render scripts.
+
 ## Style
 
-Dark, minimal, legible at a glance, one palette across both modes. Consistency between plan and recap pages matters more than either being fancy.
+Dark background with light text and lines, minimal, legible at a glance, one palette across all modes. Use light mode only when asked. Consistency between plan and recap pages matters more than either being fancy.

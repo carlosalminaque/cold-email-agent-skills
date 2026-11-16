@@ -34,6 +34,13 @@ Most bad copy is not a wording problem. It is a mechanism asking one line to do 
 14. **Naming the goal is not a promise.** Cut a line as an outcome promise only if it states a number, a rate, a date for a result, or a guarantee.
 15. **Don't argue with a critic the reader never met.** After a correction, the next draft tends to defend itself ("this does not repeat your website back to you"). A reader who never saw the old version reads that as noise.
 16. **Report reversals,** not just survivors, so dead ends aren't proposed again.
+17. **Precise words.** Name the exact segment, not a vague group. Say "cold outreach", not a trade term the reader may not use. Name the channel itself, not a property of it. Name the exact source of any fact. Keep a finding short. State an absence only as what a named source shows. Take facts about someone's role only from pages that list people or openings. No shorthand or jargon; address the reader as "you".
+18. **Before and after claims need a real diff.** Compare the actual old and new texts side by side, taken from what was sent, never from memory. Name each concrete difference; a label that fits both versions is not a difference. Cut any sourced detail that does not earn its place.
+19. **Every change carries its reason,** phrased so the reader can reuse it. A list of changes without reasons is a changelog, not a lesson.
+20. **Reviewing another agent's or person's drafts (if you work with one).** A correction only lands once it is written into the governing file with the offending line as the Invalid example. Per draft, report a pass or the specific miss, whether it is a new rule or a repeat, and the recipient reaction. Check your own files before blaming the drafter.
+21. **Look one layer up.** When a batch keeps failing on something no rule covers, the fix usually belongs in sourcing or qualification, not in the copy.
+22. **When rules outgrow the drafter,** turn the checks into a per-draft report template with one field per check, so each is answered instead of remembered.
+23. **Rules carry their history.** Each rule in the governing file keeps its one-line reasoning; the incident detail and ideas that were removed go in the changelog with the reason.
 
 ## Valid and Invalid
 

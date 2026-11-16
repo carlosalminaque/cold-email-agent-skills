@@ -16,7 +16,17 @@ An executor (another agent doing the hands-on work) has finished or stopped. You
 3. **When something public was republished, compare the whole thing** with what was live before. See below.
 4. **Diagnose any failure in the same turn.** Read the failing script and the file it checked before you reply.
 5. **Write it back.** Move closed items to the done log and keep open ones on the running to-do list, if the person keeps one.
-6. **Reply** with what finished, what failed, what is still unproven, and the next instruction for each track that has one. Say how many steps the person has to take. Run the reply checks below before sending.
+6. **Do what you can close yourself, then reply.** A check ends with action, not a list. Any next step within your own reach is done in this turn, and the reply never lists an item you could have closed.
+7. **Reply** with what finished, what failed, what is still unproven, and the next instruction for each track that has one. Say how many steps the person has to take. Run the reply checks below before sending.
+
+## Scope: the whole check, whichever agent was named
+
+A check covers every executor and active session, the work queue and any pending questions, even when the person names only one agent. The named one goes first in the reply; it never shrinks the check.
+
+- **Machine health first.** If a host that runs agents is unhealthy (offline, on a network setting it should not have, doing no work), that goes at the very top, read fresh. If there is none, say so with the time you checked. A health file that has gone stale is itself a problem.
+- **Pending decisions.** Read every open question for the person each time. Put each at the top of the reply with the question, your recommendation and the exact words that answer it. A pending question must not sit unread behind a report about the queue.
+- **The queue.** Read the whole work queue, not a folder listing. If your scheduler records why it skipped an item, count waiting items by that reason. An item waiting on a start condition is the runner's job, not the person's.
+- **A gaps table to finish.** Every open item across all executors, read live this turn, gets one row ending in exactly one next move: a queued job, a handoff to another agent, or an action only the person can do. Add a coverage line naming what you read and what you skipped, and why.
 
 ## A done marker is a claim
 
@@ -74,8 +84,18 @@ A "needs you" line costs the person attention, so it gets the strictest check.
 - Before repeating any request for them to act, re-read its state now, from a source that can see it.
 - If no source can see it, write it as a question with the age of your last reading, never as a current fact or an instruction.
 - The words "still", "remains" and "has not" need a read from this turn behind them.
+- Before asking about something they may already have told another agent, read that agent's latest message from them and its reply. An item already answered is not asked again.
+- Only two things belong under "needs you": a decision that is gated (one the person said always needs their yes, such as sends, spend or deletion) and has no approval yet, and a step only the person can physically do. Test each candidate in order: is it gated, is it already approved, can an agent read or do it. Anything that is not gated, you decide yourself and log.
 
 Valid: "Last read 8:14 PM Sunday: the payment had failed. Has it been fixed since? I can't see that console." Invalid: "The card is still failing. Please fix it."
+
+## Count fixes before queuing another
+
+Before queuing a fix, check whether the same part of the system already got a fix queued today. If so, stop and look for the generator of the problem (the script, template or rule that keeps producing it) and queue that fix first. Say the count in the reply.
+
+## Hand the next instruction over through a file
+
+If you have a work queue, and the next instruction is for another agent you can reach, put it in that agent's queue as a file and read its receipt. Give the person a prompt to paste only for a target the queue cannot reach.
 
 ## What not to do
 

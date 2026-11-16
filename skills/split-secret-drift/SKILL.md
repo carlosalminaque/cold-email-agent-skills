@@ -26,16 +26,17 @@ Not for first-time setup where the credential was never created. That is a missi
 
 3. **Only then read the comparison code,** if steps 1 and 2 come back clean.
 
-4. **Rotate atomically.** When both sides must be replaced:
+4. **Get explicit approval for rotation.** Rotating a credential is a different kind of action from reading metadata. Ask the human at the moment of the fix. An earlier "keep going" does not cover it.
+   - If an agent declines a rotation citing a rule, ask whether it is a rule inside the project (which the owner can amend) or a constraint from outside it (which no project rule can change), so you know who can lift it. If its answer shifts, have it reconcile before proceeding.
+
+5. **Rotate atomically.** When both sides must be replaced:
    - generate the new value once, into one variable;
    - write every home (vault, server config, the hash step) from that same variable;
    - do it in one sitting and one terminal, never retyping or re-pasting the literal.
 
-5. **Never expose the secret.** Every check here is a length, a boolean, an existence test or a name. Never print, log, echo or screenshot the value, even when asked to "just look at it".
+6. **Never expose the secret.** Every check here is a length, a boolean, an existence test or a name. Never print, log, echo or screenshot the value, even when asked to "just look at it".
 
-6. **Verify in two stages.** First the cheapest safe read with the new key. Then the real operation. Then read the downstream state fresh, since a write call can report success while nothing changed.
-
-7. **Get explicit approval for rotation.** Rotating a credential is a different kind of action from reading metadata. Ask the human at the moment of the fix. An earlier "keep going" does not cover it.
+7. **Verify in two stages.** First the cheapest safe read with the new key. Then the real operation. Then read the downstream state fresh, since a write call can report success while nothing changed.
 
 ## Valid and Invalid
 

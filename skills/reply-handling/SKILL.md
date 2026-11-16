@@ -16,7 +16,7 @@ Sort every reply before drafting. A working set:
 | Category | Default |
 |---|---|
 | Out of office | No reply; reschedule the next step after the return date |
-| Unsubscribe / stop / remove me | No reply; suppress everywhere at once |
+| Unsubscribe / stop / remove me | Suppress everywhere at once; a one-line reply confirming the removal and nothing else (no research, no pitch); human approves until the confirmation is tested for auto-send |
 | Bounce or delivery failure | No reply; mark the address bad |
 | Auto-response from a company system | No reply |
 | Flat decline / not interested | No reply; suppress everywhere at once; never a counter-pitch |

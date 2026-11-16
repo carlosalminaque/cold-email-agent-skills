@@ -1,15 +1,15 @@
 ---
 name: context-audit
-description: "Use when asked to audit an agent's working context for drift: its installed skills, persistent memory, project docs and instruction fields. Triggers include audit my setup, check for stale context, what has drifted, or a scheduled health check after a burst of new skills or parallel sessions. Read-only by default. Finds contradictions, broken references, retired skills that still trigger, stale open items, files restating facts owned elsewhere, and files that do not say whether they are current or historical. Scores four dimensions so drift can be tracked run over run, ranks findings by leverage, names an owner for each, and copies unresolved high findings into the running to-do list so they are actually seen."
+description: "Use when asked to audit an agent's working context for drift: its installed skills, persistent memory, project docs and instruction fields. Triggers include audit my setup, check for stale context, what has drifted, or a scheduled health check after a burst of new skills or parallel sessions. Runs as a standing watch as well as on demand. Finds contradictions, broken references, retired skills that still trigger, stale open items, files restating facts owned elsewhere, and files that do not say whether they are current or historical. Scores four dimensions so drift can be tracked run over run, ranks findings by leverage, names an owner for each, and copies unresolved high findings into the running to-do list so they are actually seen, and queues every fix that needs no approval in the same run."
 ---
 
 # Context audit
 
 Needs: local shell
 
-A read-only audit of everything an agent loads as context. Over time, skills, memory and project docs drift apart: a skill still tells sessions to do something the person banned, a pointer names a file that no longer exists, an old checkpoint quietly passes for current. This audit finds that drift before a session acts on it.
+An audit of everything an agent loads as context. Over time, skills, memory and project docs drift apart: a skill still tells sessions to do something the person banned, a pointer names a file that no longer exists, an old checkpoint quietly passes for current. This audit finds that drift before a session acts on it, and gets it fixed without waiting for the person to notice.
 
-Read-only means: produce findings, propose fixes, apply nothing without a yes per finding. The one exception is copying findings onto the to-do list (see below), which is a note, not a fix.
+The audit reads; the fixes go to a queue. Every finding whose fix needs no approval (a stale line, a broken pointer, a missing "superseded" marker) becomes a work item on a queue or task list in the same run, named in the report. When unsure whether a fix needs approval, treat it as gated. Only fixes behind a real approval gate (sending to people, spending money, deleting for good, switching something off) wait for the person's yes, one finding at a time. A per-finding yes on everything does not work: the audit often runs unattended, nobody is there to say yes, and the findings sit unfixed for days.
 
 ## Surfaces to inspect
 
@@ -53,7 +53,15 @@ Valid: A checkpoint titled "Superseded, read the master to-do instead." Invalid:
 
 ## Lint, if a checker exists
 
-If the setup ships a skill linter, run it on all installed skills every run, report counts by flag type and the change since the last run. If no skill files are on disk this run, say so in the first lines of the report and do not score capabilities as clean.
+If the setup ships a skill linter, run it on all installed skills every run, report counts by flag type and the change since the last run. Treat dead references, references to retired skills and copied facts (prices, rules) as HIGH, because a session follows a dead pointer or a stale copy without noticing; copy the HIGH ones onto the running to-do. If no skill files are on disk this run, say so in the first lines of the report and do not score capabilities as clean.
+
+## Outcome tests, not only documents
+
+Where standing test batteries exist (replies, drafts, checks), run them in the audit and compare each score with the last run. A clean document check beside a falling battery score is itself a finding: the files read fine and the behavior got worse.
+
+## Split coverage
+
+If two tools or sessions audit different surfaces, do not re-audit the other side's files. Queue a finding on them as a work item for the tool that owns them.
 
 ## Scoring
 
@@ -79,8 +87,16 @@ Valid: To-do line "Project description still names a retired channel as live; se
 
 ## Output
 
-Lead with the score, the breakdown, and any high finding open past three runs. Then each finding: what contradicts what, file and line evidence for both sides, what a session would do wrong, the owner, and the proposed fix. Then the top three fixes with concrete next steps. Stop there. If findings suggest building something new, propose it separately rather than building inside the audit.
+Lead with the score, the breakdown, and any high finding open past three runs. Then each finding: what contradicts what, file and line evidence for both sides, what a session would do wrong, the owner, and the proposed fix. Then the top three fixes with concrete next steps, then the list of work items queued in this run and the gated fixes waiting for a yes, each as one question. If findings suggest building something new, propose it separately rather than building inside the audit.
+
+Valid: "Queued 4 fixes (broken pointer in skill X, two unmarked checkpoints, stale count on the to-do). One waits for a yes: delete the retired skill Y." Invalid: "Proposed 5 fixes; reply yes to each to apply."
 
 ## Cadence
 
-On demand, and worth proposing after a burst of skill creation or parallel sessions. Do not schedule a recurring run without the person approving the interval.
+Run it as a standing watch, so drift is found without anyone asking. Agree the interval with the person once; after that it runs unattended, still read-and-queue only.
+
+- **Light run, daily:** the lint, plus three quick checks: context budget (how many skills load and how long their descriptions are, flagging duplicates and overlapping triggers), fixes that never went live (partial results and queue items waiting past their time), and corrections the person has made more than once (each needs a check or test, not another rule). Write the score where the person's regular status check will show a drop.
+- **Full run, weekly:** every surface above and the full score.
+- **On demand:** when asked, and after a burst of skill creation or parallel sessions.
+
+If a scheduled run cannot reach a surface, say so in the report's first line and queue the fix for that access.
