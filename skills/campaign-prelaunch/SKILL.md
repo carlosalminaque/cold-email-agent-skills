@@ -34,7 +34,8 @@ Valid: "Lookups: primary 40 sent, 31 found (balance 3,180 to 3,140); secondary 9
 ### Sourcing is complete only with new discovery
 
 - Before marking this step complete, show evidence of new discovery in this run: which channel or query ran, when, and which new candidates it returned.
-- (Does not apply to a person or company they already named: the evidence there is the confirmed target and verified contact details.) Leads already marked qualified from an earlier session do not satisfy the step, however recent, unless the person said in this run to reuse them. Reading old rows and calling them sourced is the failure this rule exists to stop.
+- Leads already marked qualified from an earlier session do not satisfy the step, however recent, unless the person said in this run to reuse them. Reading old rows and calling them sourced is the failure this rule exists to stop.
+- Neither rule applies to a person or company the requester already named: the evidence there is the confirmed target and verified contact details.
 - If you skip, shortcut or substitute any step for any reason (cost, ambiguity, a precondition that seemed to apply), say so plainly before moving on, not only when asked later. Label such a run exactly, for example "mechanics dry run on existing rows, no fresh sourcing", never "prelaunch complete".
 
 ## Step 2: set up the campaign

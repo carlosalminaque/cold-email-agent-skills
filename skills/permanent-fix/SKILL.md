@@ -50,10 +50,10 @@ Every mistake should happen once. "Lesson learned, I'll be more careful" is not 
 
 ## Reporting a correction
 
-Every reply that reports any problem, not only a correction, ends with the first line below, placed before the closing RETRO DONE line (`built <what>`, `queued <item>` or `not possible because <reason>`). A reply to a correction adds the second:
+Every reply that reports any problem, not only a correction, includes the first line below, placed before the closing RETRO DONE line. A reply to a correction adds the second:
 
 ```
-Permanent fix: <what removes the cause>, <built | in the prompt below | not possible, because ...>
+Permanent fix: <what removes the cause>, <built <what> | queued <item> | not possible, because <reason>>
 Fixed in: <place> (done, binds <who>), <place> (not needed, <why>), <place> (not done, <what it takes>)
 ```
 

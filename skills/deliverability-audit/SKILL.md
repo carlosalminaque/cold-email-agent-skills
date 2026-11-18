@@ -54,7 +54,7 @@ Set your own thresholds before launch and write them in the source, for example:
 ## 4b. Idle capacity and filters
 
 - Start every capacity read with paid inboxes that sit on no live campaign. List each, say why it is not sending, and either put it to work or name the one thing stopping it. Never mention idle paid capacity in passing at the end.
-- An inbox that never sent cold is ready on warmup alone (example values, use your warmup tool's own health metrics): about 21 days of warmup, reputation at least 95%, no bounces. Start near 5 sends a day and step up as clean sends build. An inbox that already sent cold needs a history test instead: 14 days of sending with bounces under 2%.
+- An inbox that never sent cold is ready on warmup alone (example values, use your warmup tool's own health metrics): about 21 days of warmup, reputation at least 95%, no bounces. Start near 5 sends a day and step up as clean sends build. An inbox that already sent cold needs a history test instead (also example values): 14 days of sending with bounces under 2%.
 - Any filter a rule sets on inboxes, leads or domains must name what it excludes before it ships, and be run against the live account list. If it shuts out paid, ready capacity, change the rule or say why.
 - Each actively sending domain should have a backup domain bought and mid-warmup. Flag a missing one as a real gap with a concrete recommendation. Never buy without explicit approval, and never claim a backup exists when it does not.
 - Automation must not silently overwrite a from-name or signature; treat them as read-only unless a person asks, and check this whenever a workflow touches inbox settings.

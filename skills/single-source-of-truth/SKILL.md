@@ -46,7 +46,7 @@ Public pages, decks and scripts are never a source and never outrank anything. T
 - A skill's or document's own internal caveat is not automatically the top source. It does not override a source in the map.
 - Where two real sources disagree, rank does not settle it. Never silently pick a winner. Tell the human what each source says and where it comes from, and ask which is correct.
 - Once resolved and written back, the answer stays resolved. Later sessions use it and do not ask again.
-- In an unattended run, do not block on the mismatch. Flag it in a note for the human and carry on with the task.
+- In an unattended run, do not block on the mismatch. Flag it in a note for the human and carry on with the work that does not depend on the disputed fact; where some must, use the more cautious reading and say which one in the note.
 - If only generic or placeholder framing exists for a client-facing need, say so plainly and mark it unsourced. Never present it as fact.
 
 ## Client-facing artifacts

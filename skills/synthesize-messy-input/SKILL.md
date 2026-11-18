@@ -33,4 +33,4 @@ When the ask is what happened, why something took so long, or a timeline, build 
 - Valid: "You're really asking whether this replaces your current reply process. It doesn't: two of its five ideas fit, here is why, do X first."
 - Invalid: a summary of each upload with no answer.
 - Valid (invented example): "Coverage check: help center 22 files, onboarding emails 9, billing export 6, each one placed under 'Where the hours went'."
-- Invalid: a retrospective whose sections are the requester's own four guesses, each marked right or wrong, while the largest workstream in the record (the help center, 22 files) never appears.
+- Invalid (invented example): a retrospective whose sections are the requester's own four guesses, each marked right or wrong, while the largest workstream in the record (the help center, 22 files) never appears.

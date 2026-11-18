@@ -49,7 +49,7 @@ Invalid: flattening the page into a PNG out of habit.
 
 ## Offering a visual unasked
 
-Offer at natural moments only: a plan with three or more moving parts waiting for approval, or a finished structural change. Make the offer one line that names the output and why it helps, and build nothing until the person says yes.
+Offer at natural moments only: a plan with three or more moving parts waiting for approval, or a finished structural change. Make the offer one line that names the output and why it helps, and build nothing until the person says yes. (A preview render of a page already edited, under "Preview" below, is not such a visual.)
 - Do not offer for trivial changes.
 - Remember declined offers per plan or work unit, and do not repeat the offer unless the plan changes materially. If you keep a running notes or handoff file, record it there.
 - Once an offer is accepted, build the visual directly; the building step never loops back into offering.
@@ -104,7 +104,7 @@ Work from the best source available: a real diff first, then a detailed report o
 
 When asked to see a recently edited page or deck (or after a non-trivial visual edit, unasked), render it headlessly, cut long pages into sections of roughly 1200px height, and send the images with a one-line caption.
 
-Pick the target without asking when it can be inferred: the file named, else the file most recently edited, else the live front page. Do not re-render untouched pages.
+Pick the target without asking when it can be inferred: the file named, else the file most recently edited, else, in a web project, the live front page. Do not re-render untouched pages.
 
 View each cropped section yourself before sending to catch rendering faults. Send all images in one message, then delete the temporary screenshots and render scripts.
 
