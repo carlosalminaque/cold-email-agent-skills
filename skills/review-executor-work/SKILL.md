@@ -15,17 +15,20 @@ An executor (another agent doing the hands-on work) has finished or stopped. You
 2. **Check what matters against live state, not the report.** The live system, the chat channel it posts to, the files themselves. A script's own readback is still a claim until an independent read agrees.
 3. **When something public was republished, compare the whole thing** with what was live before. See below.
 4. **Diagnose any failure in the same turn.** Read the failing script and the file it checked before you reply.
-5. **Write it back.** Move closed items to the done log and keep open ones on the running to-do list, if the person keeps one.
-6. **Do what you can close yourself, then reply.** A check ends with action, not a list. Any next step within your own reach is done in this turn, and the reply never lists an item you could have closed.
-7. **Reply** with what finished, what failed, what is still unproven, and the next instruction for each track that has one. Say how many steps the person has to take. Run the reply checks below before sending.
+5. **Name the stop.** For any session that stopped, say which kind of stop it is: waiting at a real decision point (answer its question) or stalled with nothing left to wait for (restart or route it).
+6. **Write it back.** Move closed items to the done log and keep open ones on the running to-do list, if the person keeps one.
+7. **Do what you can close yourself, then reply.** A check ends with action, not a list. Any next step within your own reach is done in this turn, and the reply never lists an item you could have closed.
+8. **Reply** with what finished, what failed, what is still unproven, and the next instruction for each track that has one. Include the open queue count, the pending question count, and each instruction you queued with its receipt or the reason it is still waiting. Say how many steps the person has to take. Run the reply checks below before sending.
 
 ## Scope: the whole check, whichever agent was named
 
 A check covers every executor and active session, the work queue and any pending questions, even when the person names only one agent. The named one goes first in the reply; it never shrinks the check.
 
 - **Machine health first.** If a host that runs agents is unhealthy (offline, on a network setting it should not have, doing no work), that goes at the very top, read fresh. If there is none, say so with the time you checked. A health file that has gone stale is itself a problem.
-- **Pending decisions.** Read every open question for the person each time. Put each at the top of the reply with the question, your recommendation and the exact words that answer it. A pending question must not sit unread behind a report about the queue.
-- **The queue.** Read the whole work queue, not a folder listing. If your scheduler records why it skipped an item, count waiting items by that reason. An item waiting on a start condition is the runner's job, not the person's.
+- **Every recent agent chat.** Read the last message from the person and the last reply in each agent chat active recently, not only the ones that keep a status file. Report them in a table (chat, last reply time, what it says, whether the person is needed). A status file or handoff note is not the chat's final word.
+- **Work left behind is open work.** A task a finished agent left in the queue for another agent is reviewed with everything else, even when the person asked about a different agent.
+- **Pending decisions.** Read every open question for the person each time. Put each at the top of the reply with the question, your recommendation and the exact words that answer it. When the person answers one in the session, write the answer into its question record (status, their words, the time) and queue the follow-up work in the same turn. A pending question must not sit unread behind a report about the queue.
+- **The queue.** Read the whole work queue, not a folder listing. If your scheduler records why it skipped an item, count waiting items by that reason. An item waiting on a start condition is the runner's job, not the person's. When an executor is out of usage or quota, its waiting items are listed as waiting on quota, never as failures. When items are waiting but none can start, say that a usage limit is the constraint, not free capacity.
 - **A gaps table to finish.** Every open item across all executors, read live this turn, gets one row ending in exactly one next move: a queued job, a handoff to another agent, or an action only the person can do. Add a coverage line naming what you read and what you skipped, and why.
 
 ## A done marker is a claim
@@ -44,6 +47,10 @@ Executors often rebuild a page, deck or document to change one part, and silentl
 - Check which source the new file was built from. It must be the version that was live, never an older draft.
 
 Valid: "13 pages compared with the previous live copy; only page 11 differs, as requested." Invalid: "Pricing slide verified" with the other 12 pages unread.
+
+## Finished media is checked where it is going
+
+A video, image or cover that is headed for a public destination (a social account, a video channel, the website) is not sent to the person for review. Check instead that the live post or page carries the newest file and the right thumbnail. Send a file to the person only when they have to listen to it, sign it, upload it themselves or decide from it.
 
 ## A setting is not a result
 
@@ -95,7 +102,15 @@ Before queuing a fix, check whether the same part of the system already got a fi
 
 ## Hand the next instruction over through a file
 
-If you have a work queue, and the next instruction is for another agent you can reach, put it in that agent's queue as a file and read its receipt. Give the person a prompt to paste only for a target the queue cannot reach.
+If you have a work queue, and the next instruction is for another agent you can reach, put it in that agent's queue as a file and read its receipt. Give the person a prompt to paste only for a target the queue cannot reach. Never set a queued item to received or done by hand; only the runner that processes it sets that status. After queuing, read the scheduler's next pass (its skip log and its claims) to confirm the item was picked up. An item skipped as invalid or ineligible never starts on its own: fix it and queue it again. After writing a file through a sync or commit tool, read its size back from the destination, so you know the new version landed and not an older copy.
+
+## Second opinion before a plan ships
+
+The session that wrote a plan shares its blind spots, so reviewing it in the same session does not catch them. Before a non-trivial plan or build handoff is final, get a critique from a clean context. Skip this for small, low-stakes changes. Give the reviewer only the plan, the goal and the hard constraints already decided; leave out the discussion that produced the plan. Tell it to look for weaknesses, not to praise, and to report under fixed headings: showstoppers, gaps, inconsistencies, underspecified, suggestions, strengths. Each finding names the exact section and says concretely what breaks or stays unclear; "might cause issues" is not a finding.
+
+For a high-stakes plan (money, an action that cannot be undone, several systems at once), run two independent reviews in parallel; where they agree is the stronger signal. Sort the findings before showing them: must fix before handoff, then minor. A finding the plan already covers elsewhere (a false alarm from missing context) is named as such and dropped. Show the sorted findings and ask which need the person's decision and which are obvious fixes. Never patch the plan quietly and ship it again without showing what changed.
+
+Valid: "Two clean reviews; both flag the missing rollback step, one flags a naming nit. Rollback added (diff below); the nit is yours to call." Invalid: "Reviewed it myself, looks good, shipping."
 
 ## What not to do
 
