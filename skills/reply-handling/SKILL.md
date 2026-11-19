@@ -73,10 +73,10 @@ Proposed reply:
 <exact text>
 
 New in this reply: <any fact or promise not already in the source, or "nothing new">
-Say yes and I send it.
 ```
 
-- Nothing after "Say yes and I send it." Research, call notes and explanations wait until after the send.
+- Ask for the approval in the same turn as a structured decision (Yes and No options), never as a typed "say yes and I send it" line. Nothing else follows; research, call notes and explanations wait until after the send.
+- Keep one producer of drafts: start from its proposal and send corrections back to it. The session that drafted a reply never reviews it; a fresh reviewer does. The full flag shape (sources read, the real question, review rounds) and send procedure are in `approved-reply-send`, which wins where the two differ.
 - Confirm it is real first (open the thread). A bounce or auto-responder is not a waiting reply.
 - Do the research before the message: read their site and answer in their terms; if they name a second company, read that one too.
 - If they corrected an assumption in their last reply, the new draft must not repeat it.
@@ -86,7 +86,7 @@ Say yes and I send it.
 
 - Valid: a deterministic check finds a price in a reply to "what's this?", the draft is redrafted once without it, passes, and sends.
 - Invalid: code strips the price sentence out of the draft, leaving "Commission would be I take half...".
-- Valid: a message that starts "REPLY WAITING ON YOU" and holds only the reply.
+- Valid: a message that starts "REPLY WAITING ON YOU", holds only the reply and ends in a Yes or No decision.
 - Invalid: the same reply as the second paragraph of a status update.
 
 ## Before and after
