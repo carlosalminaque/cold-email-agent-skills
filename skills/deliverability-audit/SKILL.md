@@ -9,7 +9,7 @@ Needs: local shell
 
 New sending domains have no reputation to fall back on. A broken record or a bounce spike in the first week can do lasting damage. The most common failure is not a missing check, it is a checklist that existed and was never run before launch.
 
-**Hard gate:** the full audit runs and its result is reported before any domain's first real send. If a launch is imminent and the audit hasn't run, say so and get an explicit go or no-go. "It's on the checklist" does not count as run.
+**Hard gate:** the full audit runs and its result is reported before any domain's first real send. If a launch is imminent and the audit hasn't run, say so and get an explicit go or no-go. "It's on the checklist" does not count as run. Once a domain is live, run the full audit again against real production sends, and again whenever the checklist itself changes; a dry run is no substitute for either.
 
 ## 1. DNS authentication
 
@@ -26,18 +26,18 @@ Flag:
 - SPF, DKIM or DMARC missing.
 - More than one SPF record on a domain, or an SPF record needing more than 10 DNS lookups. Both make SPF fail at the receiver, silently.
 - DKIM or SPF not aligned with the From domain.
-- A DMARC policy of `quarantine` or `reject` on a brand-new domain. It can be right (many inbox vendors ship it as their baseline), but confirm alignment is clean first. `p=none` is safer while reputation builds, and is incompatible with BIMI, which needs an enforced policy. Surface that trade-off; don't pick silently.
+- A DMARC policy of `quarantine` or `reject` on a brand-new domain. It can be right (many inbox vendors ship it as their baseline), but confirm alignment is clean first. `p=none` is safer while reputation builds, and is incompatible with BIMI, which needs an enforced policy. Surface that trade-off; don't pick silently. On a new domain, also flag an enforcement policy that has no percentage (`pct`) tuning to ramp it in, not only alignment problems.
 
 Write down any deliberate exception (a vendor's standard DMARC policy, say) next to the check, with the source, so the next audit doesn't re-flag it.
 
 ## 2. Mailbox provider tools
 
-- Register each sending domain with Google Postmaster Tools, and Microsoft SNDS for sending IPs if you control them. Low volumes may show no data; that is expected, not a pass.
+- Register each sending domain with Google Postmaster Tools, and Microsoft SNDS for sending IPs if you control them. Low volumes may show no data; that is expected, not a pass. If a provider's domain verification asks you to grant a third-party app OAuth consent, leave that grant to the account owner.
 - Check the domains and IPs against the major public blocklists.
 
 ## 3. Compliance basics
 
-- Every email carries a working opt-out and a valid physical postal address (required for commercial email under CAN-SPAM in the US; similar rules elsewhere).
+- Every email carries a working opt-out and a valid physical postal address in the email body itself; a postal address only in a website footer does not satisfy the law (required for commercial email under CAN-SPAM in the US; similar rules elsewhere).
 - Opt-outs are honored across every campaign and inbox at once, not per campaign.
 - Check the current requirements of the large mailbox providers for your volume (Google and Yahoo publish sender guidelines covering authentication, unsubscribe handling and spam-complaint thresholds). Read the live page; the thresholds change.
 
@@ -47,7 +47,8 @@ Read from what was sent, never from a dashboard summary alone:
 
 - bounce rate per inbox and per domain, and per list source;
 - spam complaints where the provider reports them;
-- reply rate per inbox: one inbox far below the others usually means that inbox is landing in spam.
+- reply rate per inbox: one inbox far below the others usually means that inbox is landing in spam;
+- per inbox, sent volume over the last 7 and 30 days, warmup status and any warning the sending platform shows.
 
 Set your own thresholds before launch and write them in the source, for example: pause an inbox above a set bounce rate, pause a list source above a set bounce rate. Example values only, tune them to your own data: above 3% bounce, pause the inbox for new sends and go to incident response; 1 to 3%, flag and watch. Zero replies after 20 or more sends is worth investigating, but a small sample is not conclusive.
 
@@ -58,7 +59,7 @@ Set your own thresholds before launch and write them in the source, for example:
 - Any filter a rule sets on inboxes, leads or domains must name what it excludes before it ships, and be run against the live account list. If it shuts out paid, ready capacity, change the rule or say why.
 - Each actively sending domain should have a backup domain bought and mid-warmup. Flag a missing one as a real gap with a concrete recommendation. Never buy without explicit approval, and never claim a backup exists when it does not.
 - Automation must not silently overwrite a from-name or signature; treat them as read-only unless a person asks, and check this whenever a workflow touches inbox settings.
-- Do not retire, detach or change forwarding on an inbox within 60 days of a send into a region with strict sender or privacy rules (for example the EU or UK); check its last such send first and keep it if recent.
+- Do not retire, detach or change forwarding on an inbox within 60 days of a send into a region with strict sender or privacy rules (for example Canada or Australia, or any other region your own rules name); check its last such send first and keep it if recent.
 
 ## 4c. Pre-launch checklist
 
@@ -70,6 +71,9 @@ Report each item as Confirmed, Not confirmed or Not applicable, never as a summa
 - No no-reply sender; several sender identities with real names and signatures.
 - SSL and MX records on every sending domain; the sending domain redirects to the real site.
 - Weekday-only sending.
+- Mailboxes sit with a mainstream provider (Google or Microsoft).
+- IP rotation is on where the sending platform supports it.
+- BIMI and ARC are configured where supported. BIMI needs DMARC at enforcement, a BIMI TXT record and usually a verified mark certificate and an SVG logo, so report it as a sequencing fact (what has to come first), not a bare pass or fail. Confirm from received headers that ARC is actually applied; do not assume it.
 - Every step of every campaign, follow-ups included, carries the full sender footer (name, postal address, web contact, reply-to-unsubscribe line). Read back every step before launch or resume, not just step 1.
 - Items no earlier check covers (suppression enforcement, greylist retry) are flagged open, never marked Confirmed unchecked.
 
