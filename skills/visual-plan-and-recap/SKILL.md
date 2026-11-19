@@ -17,7 +17,7 @@ A wall of text is hard to sanity-check. A diagram is not. This skill makes one H
 
 If it is unclear whether they want what changed or what it looks like now, ask in one line instead of guessing.
 
-Check first whether a more specific tool owns the job (a UI mockup of something not yet built, a live walkthrough, a test pass, a chart). Route to it rather than building a generic visual.
+Check first whether a more specific tool owns the job (a UI mockup of something not yet built, a live walkthrough, a test pass, a chart). Route to it rather than building a generic visual. A request for step-by-step instructions the person will carry out themselves gets a written guide, not a diagram.
 
 Skip plan and recap when one sentence covers the change fully.
 Valid: a plan touching three services, a new database table and an approval step gets a plan page.
@@ -35,7 +35,7 @@ Invalid: every box the same style, so the reader cannot tell what changes.
 
 **Fit one screen of scanning.** If two diagrams are needed (data flow and a UI sketch), put them in labeled sections of the same file rather than nesting everything into one dense chart.
 
-**Deliver the live HTML, not a screenshot of it.** The page is the point: it scales, it can hold expandable details, and text stays selectable. Use a screenshot only if the HTML cannot be viewed (Preview mode below sends images by design).
+**Deliver the live HTML, not a screenshot of it.** The page is the point: it scales, it can hold expandable details, and text stays selectable. Use a screenshot only if the HTML cannot be viewed (Preview mode below sends images by design, and comparison diagrams ship as both).
 Valid: send the .html file so it opens as a page.
 Invalid: flattening the page into a PNG out of habit.
 
@@ -45,7 +45,11 @@ Invalid: flattening the page into a PNG out of habit.
 
 **Chart code gets its own guidance.** If the page contains a chart or graph, read any available data-visualization guidance (palette, mark styles) before writing chart code.
 
-**Copy from a reference by its pixels.** When recreating icons or colors from a reference image, crop and sample the file itself. Do not redraw from memory or guess hex values.
+**Copy from a reference by its pixels.** When recreating icons or colors from a reference image, crop and sample the file itself. Do not redraw from memory or guess hex values. This holds even when the image was already looked at earlier in the conversation: find the actual file and open it before extracting anything. The usual sequence: upscale and crop, sample exact colors from the pixels, remove the background by flood fill, check the result on the background it will sit on, and adjust the crop until the edges are clean.
+
+**Pick the medium by how it will be used.** A self-contained HTML or SVG page for anything interactive, crisp at any size, or likely to be revisited; a rendered image for a static picture headed into a document, deck or chat; diagram-language source (Mermaid, Graphviz) when the source itself is worth keeping. A diagram that will be updated again and again stays one self-contained page updated in place; use a shared collaborative board only when other people must pan, zoom and comment on it. When the visual is going into a Word, slide or PDF file, settle the visual content first and only then follow that format's own guidance.
+
+**Comparison diagrams.** When one path worked and another failed from the same starting point (a bug postmortem, "why did X work and Y not"), draw a branching comparison from the shared start. When two tools or options are weighed on their own merits with no shared event, lay them side by side as pros and cons. Either kind ships as both a static image and a self-contained HTML page, and a change to one is made to the other.
 
 ## Offering a visual unasked
 
@@ -53,6 +57,7 @@ Offer at natural moments only: a plan with three or more moving parts waiting fo
 - Do not offer for trivial changes.
 - Remember declined offers per plan or work unit, and do not repeat the offer unless the plan changes materially. If you keep a running notes or handoff file, record it there.
 - Once an offer is accepted, build the visual directly; the building step never loops back into offering.
+- Offering never delays an explicit request: if the person already asked for a specific visual, build it without offering first.
 
 ## Plan mode: what to include
 
