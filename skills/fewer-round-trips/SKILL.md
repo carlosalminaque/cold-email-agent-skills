@@ -17,9 +17,9 @@ For a solo operator, every round trip costs two pastes, a wait and a context swi
 
 3. **Paste now is the default.** Before telling the human to hold a prompt until another run ends, work out when that run can end and which steps actually depend on it. Put holds inside the prompt on those steps only ("hold step 5 until after 09:40"), and put the urgent step first.
 
-4. **Write from what is left, not from the last report.** Before drafting, read the open-items list and the plan the work belongs to. The prompt covers every item this executor can do, in order. A prompt scoped to "the findings I just read" spawns the next prompt.
+4. **Write from what is left, not from the last report.** Before drafting, inventory every open thread (sessions, the to-do list, the plan the work belongs to) and authorize everything reversible up front in one block. The prompt covers every item this executor can do, in order, and labels independent tracks as independent so a blocker on one never silently holds the others. A prompt scoped to "the findings I just read" spawns the next prompt.
 
-5. **One prompt per executor per pass.** If the same executor needs a second prompt within half a day, the first was scoped too small. Say so and fold everything left into one.
+5. **One prompt per executor per pass.** If the same executor needs a second prompt within half a day, the first was scoped too small. Say so and fold everything left into one. If an executor was already prompted twice today, the next prompt must contain the builder-and-releaser loop (rule 9) and the number of pastes still needed.
 
 6. **Check the mechanism before ordering a switch.** Before a prompt says "flip", "release" or "enable", confirm the script has that step, the caller reads that flag, and the secret it needs exists. If you can't check, the check is step one of the prompt and building what is missing is the fallback.
 
@@ -40,10 +40,13 @@ For a solo operator, every round trip costs two pastes, a wait and a context swi
 16. **Batch the human into one ask at the end.** Write decision rules instead of decision requests and fallbacks instead of stops. Where a call is truly theirs, offer advance yeses for named conditions so one answer covers several outcomes.
 17. **Autonomy moves the decision, not the verification.** Deciding without asking means checking more, not less. Being live is not a reason to forbid a fix; being irreversible is.
 18. **Don't repeat a question word for word.** One that went unanswered once needs a new angle, a default, or a decision rule, not the same text again.
+19. **Batch second-executor work into one hand-off.** Order the build so hand-offs arrive together, and split work by what each executor is for, on separate files so two never touch the same ones.
+20. **Test an executor's "X once Y finishes".** If X does not really depend on Y, tell it to start now.
+21. **Read the drafted prompt as written.** Every "do not", "stop", "hold", "await" or "confirm first" must name a real gate. Every investigation step must answer "and then what?" and end at a deliverable or a gate, never at a finding.
 
 ## When it happens anyway: diagnose, don't apologize
 
-Name which habit caused the round trip and quote the offending line from your last output. If a rule against it already existed and was broken, say so: a rule that didn't hold needs a different mechanism, not a repeat.
+Name which habit caused the round trip and quote the offending line from your last output. Common causes: defaulting to read-only, writing halt-on-ambiguity as a stop instead of a fallback, scoping the prompt to the last finding, and handing over a technical or wording choice that was never the human's as a menu. If a rule against it already existed and was broken, say so: a rule that didn't hold needs a different mechanism, not a repeat.
 
 ## Valid and Invalid
 

@@ -34,8 +34,10 @@ Run speech-to-text that returns word or token times, on chunks split at pauses. 
 - "Sorry, let me repeat that" redoes what came just before it. Remove the failed try and that phrase; keep the redo.
 - Several tries in a row: only the final one stays.
 - A redo may begin before the failed line. Keep it from its own start and remove the older version of whatever it repeats.
+- A redo can also straddle files: the tail of one upload may repeat a paragraph that the next upload starts over. Keep the complete version once and drop the other copy.
 - If the speaker skipped or changed lines, what they said wins. Update the script and captions to match them.
 - Place each cut on the quietest 10 ms of the gap, with 10 ms fades on both sides.
+- When joining slides or sections, leave about a second of pause between them.
 
 - Valid: "Three attempts at that sentence: kept the third, removed the first two and both apologies."
 - Invalid: keeping the first attempt, or keeping a script line nobody said.
@@ -76,4 +78,5 @@ Cut clips of 6 to 10 s with matching words: raw, and from the final. Take one pa
 - Transcribe every generated line back and compare it with the script. Redo any line under about 0.9 match.
 - Also redo any line whose transcript runs longer than the script, or repeats four or more words the script does not repeat. A clone can say a sentence twice and still score well.
 - Clones can swallow a short first word. Reword the line to open with a longer phrase, and keep on-screen text the same as the audio.
-- Whether a clone sounds like the person is for that person to say: play their real take and the clone on the same words.
+- Whether a clone sounds like the person is for that person to say: play their real take and the clone on the same words. If it does not sound like them, ask for a few minutes of their normal speech as a fresh reference recording.
+- One generation that holds several lines needs splitting afterwards. Silence detection fails here, because the gaps between lines are no longer than the gaps between sentences. Transcribe with word timestamps, align the words to the script, and cut midway between the last word of one line and the first word of the next.

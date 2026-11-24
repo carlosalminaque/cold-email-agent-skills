@@ -63,6 +63,10 @@ A chat-bot line, a log summary, a dashboard label or an AI-written profile is te
 - **Identity.** Match a resource by its immutable ID or canonical URL, read back, before attributing an owner, history or behavior to it. A similar title, container or timestamp is not an identity check.
 - **Readers of a thing.** "Which systems read X" is answered by opening each reader's own configuration, not by inferring from what the serving API offers.
 - **Earlier findings.** A caveat or a "fixed and verified" line from a previous pass is a claim. Re-derive it before repeating it.
+- **Saved state.** A stored phase such as blocked, needs-user or ready is a note, not live proof. Reconcile it with the latest transcripts and current instructions before preserving or reporting it.
+- **Remembered response shapes.** Before calling a write and reread mismatched, inspect the live response and the handler's current contract. A shape recalled from earlier is not evidence of a failure.
+- **Login walls.** A sign-in form seen right after navigation may vanish once the app restores its session. Let that finish and re-read the same tab before reporting a logout.
+- **One checkable answer.** Do not apply "pick a reasonable option and move on" to a question with a single verifiable truth. Verify the factual part, then use judgment only on a true design fork.
 
 ## Testing a repair
 
@@ -76,6 +80,25 @@ Check four things: the goal, what "done" means, concrete validation evidence for
 Tag each non-trivial claim: `[VERIFIED: <what was checked>]` or `[UNCONFIRMED: <what was tried and why it did not settle it>]`. Tag conclusions, not routine narration. Readers can then scan straight to the unconfirmed lines.
 
 Say everything still open in the same report: unfinished, degraded, rolled back, deferred, unverified or broken. Nobody should learn of a gap by asking a follow-up. Each open line ends with its next action and who owns it; a report with an open line that lacks one is unfinished.
+
+## Disclosing gaps: the checks behind an honest "nothing else is open"
+
+1. **Enumerate mechanically.** Pull every open line from the whole to-do list, not the newest section, plus audit documents, scheduled runs, handoffs and queues sorted by age. A sudden drop in count means a format changed, not that nothing is open.
+2. **Count from the source.** Event and reply counts come from the originating system, its alerts and any derived queue together, never the downstream queue alone. Name each source read and when.
+3. **Join missing things to their consumer.** For anything listed as missing, unset or undeployed, check whether a live path depends on it. If so it is a present defect, not a chore.
+4. **Use every entry point like a visitor.** Load each public page and app in a real browser, read the console, parse-check inline scripts, call each form endpoint, open outside links, and repeat after any upload or repoint.
+5. **Look inside the app.** Read caveats printed in the UI and the freshness footer, and read the actual rows, spotting test or synthetic data in production views. Reconcile the system of record against its external source row by row, and load the live authenticated page, since a grep of page source is not a data check.
+6. **Surfaces against decisions.** Compare every dashboard, bot message, page, deck, help article and script that describes behavior with current decisions. A removed feature still shown, or two surfaces that disagree, is a gap. The lasting fix is generating them from one config.
+7. **Public copy.** Each promise on a public page names the record showing it exists, and thresholds in copy match the form logic. Check wording rules by script over the rendered DOM (options, placeholders, titles, alt text, meta), never by eye.
+8. **Enforced rules trace to a decision.** Every gate, cap or wait that scripts enforce should trace to a dated decision by its owner. Report any that does not, with what it blocks.
+9. **Alerts and blocklists.** Read every alert type and the reason inside each bounce. Check sending domains against blocklists only after proving the resolver answers honestly; a list whose test fails is unchecked, never clean.
+
+Writing the gaps report:
+
+- Only open items, each with its next action and owner. No closed, context or FYI lines.
+- An item waiting on an outside event carries the in-house test that would settle it now, or the reason none exists.
+- End with a coverage line naming every source checked and every one skipped, with the reason and real numbers per check.
+- If a gap surfaces that an earlier pass should have reported, the check failed. In the same turn say which pass missed it, find the cause, make the check mechanical, patch this procedure and run it now.
 
 ## Valid and Invalid
 

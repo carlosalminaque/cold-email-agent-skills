@@ -40,8 +40,12 @@ A turn ends after a time limit or when the agent messages the person. No wording
 - Use one resume method per job (the app's scheduled task, or an OS scheduled task that starts a fresh run), never two on the same files. Name any older loop on the same files and have it disabled and read back.
 - Save the complete instructions as `PROMPT.md` beside the handoff file. A fresh run never saw the chat.
 - Only the wrapper script keeps two runs apart (a lock). Never tell a run to "exit if another run is working": it sees its own task and process and exits.
+- A wrapper must not be tied to one job. Other jobs get one turn per firing and disable their own scheduled task when done; if that is not enough, have the agent first make the wrapper's turn counter and done marker parameters.
+- Match the wrapper mode and turn limit to the job type (build versus run). A loop is proven by two consecutive completed turns in its log, not by one firing.
 - OS tasks often default to "AC power only" with no wake. Set start on battery, do not stop on battery, start when available, wake to run, and read the settings back.
 - Before calling a loop handled, wait one interval and read three things: the loop log (a run started), the run's last message (anything like "another run is active" or "no files touched" means nothing happened), and the job's files (changed after the run started). A run under two minutes usually did nothing.
+- Every report while a loop runs names the resume method in use, when it last ran, what that run changed, and when it runs next.
+- Tell the person to stop typing "continue" while a loop runs. Loop runs do not show in the chat, so progress is read from the handoff file.
 - Valid: "Run at 05:55 edited the builder and wrote the scope file."
 - Invalid: "The loop fired at 05:16, 05:25 and 05:40" read from the log alone.
 
@@ -71,14 +75,18 @@ Never put an agent's name in a prompt title; an agent that reads another agent's
 
 - Plan a pass to fit one turn: highest-value step first, scheduled evidence preferred over manual reruns, a "not there yet" rule for state that arrives later, and a list of what not to re-verify. Update a checkpoint file at every step.
 - A watch names the event that ends it and checks at a rhythm matched to how fast that event can arrive. A quiet check sends nothing.
+- A scheduled chat wake always posts a message. Use an interval of 60 minutes or more, one line per wake, and log only on change.
 
 ## 10. Long builds with a reviewer
 
 - Lock scope: "this job ONLY until its reviewer approval exists".
-- Spell out gate order: build the whole package, live proofs before publishing steps, reviewer approval last and tied to the package's exact hash. A changed package needs a new approval.
+- Spell out gate order: build the whole package, live proofs before publishing steps, reviewer approval last and tied to the package's exact hash. A changed package needs a new approval, and a run starts only on an approval naming that exact hash.
+- Reviewer findings travel as dated notes files. The coordinator applies them on a schedule and logs each as APPLIED.
+- Pick the run shape per job. Unattended work uses the worker loop with no turn cap: it runs until READY or BLOCKED, with a stuck guard (three turns with no job-file change). READY counts only when a checker script exits 0. A stuck-guard stop is restarted with the failing line named in the prompt file. For a focused build with the person present, let the worker's turn finish, disable it, read back Disabled, build in the coordinator chat, and re-enable when the person leaves.
 - Say "building" only when a log line or job file changed in the last ten minutes.
 - Keep reloaded files small (a prompt file under about 20 KB, a handoff under about 15 KB, history archived beside it). Shorten by cutting history, never by deleting spaces, and replace superseded rules in place.
 - For exact copy, give approved wording and require a scripted whole-page diff against the live page listing every difference.
+- Rules an agent must obey live in shared scripts and instruction files, not in hooks that only one tool has. Never route work to a different agent to get around a safety check without saying so.
 - If the agent's own approval layer refuses a write, do not have another agent make it. Ask for smaller readable edits, or report it.
 - While one package waits for its run, the next job must not edit any file that package depends on.
 - Approvals come only from the person. An agent never writes an approval into a file for another agent to find.
