@@ -42,11 +42,20 @@ Every mistake should happen once. "Lesson learned, I'll be more careful" is not 
 
 6. **A workaround is unfinished** until it has a check or an owning rule.
 
-7. **Track corrections as records.** Each correction opens a tracked record in the same turn, in whatever tracker you use. A record moves through accepted, built (an independent test passes), proved, closed. An explanation closes nothing, and the retro does not finish while a record it opened has no artifact attached. When the same class of mistake comes back, mark it as a repeat: the fix must then go to the underlying cause (the habit, tool or design that keeps producing it), not another rule on the symptom.
+   Three tests before calling a fix done:
+   - Name the cause, not the instance.
+   - Would it still change what happens if the agent made the same mistake again, or does it only work if a note gets read? Only the first is structural.
+   - Run any new check against the current state at once and report what it finds.
+
+   Where a lesson goes: when two homes are plausible, use the one read before the mistake, not the one that explains it afterward. Memory holds facts and decisions, never steps; steps go in a skill or an enforced check. Record the reason with every decision, since the reason survives cases nobody foresaw. If a skill already covers the missed case, make its existing check harder to skip instead of adding a duplicate line. Skip one-offs and choices that expire, but a correction to one draft is a rule when the same mistake could happen in the next.
+
+7. **Track corrections as records.** Each correction opens a tracked record in the same turn, in whatever tracker you use. A record moves through accepted, built (an independent test passes), proved, closed. A different job accepts the record than the one that builds the fix, and an independent test run proves it, so the builder never judges its own work. For a repeat mistake, the proof is a check that re-runs the original failing case: it fails before the fix and passes after. An explanation closes nothing, and the retro does not finish while a record it opened has no artifact attached. When the same class of mistake comes back, mark it as a repeat: the fix must then go to the underlying cause (the habit, tool or design that keeps producing it), not another rule on the symptom.
 
 8. **Files you cannot edit.** If a skill or file belongs to someone else or is read-only here, write the proposed change into a dated updates file for its owner rather than dropping it.
 
 9. **Never widen permissions.** A retro does not grant the agent new rights. Sends, spend, publishing, credentials and deletion stay with the human.
+
+10. **Don't stall the work for the retro.** Write the note, say the one line, and keep going, unless the fix touches something that needs the human's yes. Any promise of changed behavior says where it is saved and who it binds; never a bare "from now on".
 
 ## Reporting a correction
 

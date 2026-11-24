@@ -37,6 +37,13 @@ When a rule, number, text or decision changes:
 3. Retire the old wording in the same change: add its distinctive phrase (whole sentences, not a bare word that is still valid elsewhere) to a retired-wording list (create one if absent), then sweep skills, docs, notes and public pages for the old version and require zero live hits.
 4. Hand-written pages and outputs (website, slide deck, video script) are not sources. Edit them to match the source and include them in the sweep.
 
+## When someone states how the system should behave
+
+1. Restate the wish as an end state anyone could check right now ("whenever allowed work exists, something is running it").
+2. Test that end state live this turn.
+3. Trace one unit of work from where it is created to where it should run, and find the hop where it stops.
+4. Fix that hop, then add a check on the end state itself, not a count of the symptom.
+
 ## Three levels of fix
 
 Say which level each fix is at:

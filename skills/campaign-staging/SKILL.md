@@ -27,6 +27,8 @@ Sending tools say "ok" to things they didn't do. An import can return success an
 3. **Check overlap.** Compare the batch with every active and draft campaign and with everyone who has already replied. Report each campaign checked and its count. A person who has replied is never a cold first-email lead again.
 4. **Set lock-at-creation settings while still draft.** In many tools, plain text, open tracking and click tracking lock once the campaign leaves draft. Set them at creation and read them back.
 5. **Load the sequence from your one source.** Each step holds its approved text, copied by script, never retyped. When saving sequence edits by API, read the sequence first and send every step with its existing step id, then read it back and confirm the ids did not change before anything resumes. A save without ids can make the tool recreate the steps: step one goes out again to leads in progress, and finished or replied leads turn active again.
+   Spacing for a new draft campaign: wider gaps as the sequence goes on (for example 3, 7 and 7 days). Set delays on drafts only; never change them on a live campaign mid-sequence.
+   Greeting and sign-off: a campaign with two or more leads gets rotated wording loaded before the import that takes it past one lead. Only a single-lead campaign may use one fixed version.
 6. **Threading.** Follow-ups usually stay in the same thread only when their subject is blank. Confirm your tool's behavior with a test send.
 7. **Leads already in another campaign.** A plain add can answer success and attach nothing. Use the tool's copy or push route for those, add only never-seen leads the plain way, and re-read the target list afterward.
 8. **Custom fields may be lead-level, not campaign-level.** Writing a field for one campaign can change the same lead in another. Check membership in other campaigns before reusing a lead with different copy.
@@ -38,6 +40,7 @@ Sending tools say "ok" to things they didn't do. An import can return success an
 
 ## Rules for live campaigns
 
+- Test or fixture leads go only into campaigns set aside and registered for testing, never into a production or finished campaign: adding a lead can flip a campaign back to active.
 - Never resend a first email to fix a settings mistake.
 - Never move a lead mid-sequence to a new campaign.
 - A "move" between campaigns can behave as a copy and leave the old membership in place. For a lead with no send history: confirm that history is empty, push it, check the target copy, re-read the source, then remove the source membership yourself. Never move a lead that has been sent to.

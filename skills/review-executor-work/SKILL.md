@@ -20,6 +20,8 @@ An executor (another agent doing the hands-on work) has finished or stopped. You
 7. **Do what you can close yourself, then reply.** A check ends with action, not a list. Any next step within your own reach is done in this turn, and the reply never lists an item you could have closed.
 8. **Reply** with what finished, what failed, what is still unproven, and the next instruction for each track that has one. Include the open queue count, the pending question count, and each instruction you queued with its receipt or the reason it is still waiting. Say how many steps the person has to take. Run the reply checks below before sending.
 
+   Keep the reply short and plain: one line on how things stand, then the tables and counts this check requires (the chat table, the gaps table, the queue and question counts above) and nothing more; no other figures the person did not ask for (byte counts, ids, hashes, usage numbers). Readbacks are for you; never queue a job just to produce such a count. Any promise in the reply ("from now on", "I will always") says in the same sentence whether it holds for this session only or system-wide, and system-wide only when you can name the check that enforces it.
+
 ## Scope: the whole check, whichever agent was named
 
 A check covers every executor and active session, the work queue and any pending questions, even when the person names only one agent. The named one goes first in the reply; it never shrinks the check.
@@ -78,9 +80,7 @@ Valid: "Requested the review folder; granted; three new entries." Invalid: "I ca
 
 ## Times are written in the reader's clock
 
-Logs and executor-facing instructions can use UTC. Sentences the person reads use their own timezone with the day.
-
-- Before sending, scan the prose outside code blocks for a digit followed by Z, and for "UTC". Convert them.
+Logs and executor-facing instructions can use UTC. Sentences the person reads use their own timezone with the day. Before sending, scan the prose outside code blocks for a digit followed by Z, and for "UTC". Convert them.
 
 Valid: "The run stopped at 10:23 PM Eastern, Sunday." Invalid: "The run ended 02:23Z."
 

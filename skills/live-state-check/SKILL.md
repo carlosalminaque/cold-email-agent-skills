@@ -35,6 +35,8 @@ What a system did yesterday, or what a summary says it does, is not what it does
 
 9. **Report a snapshot.** State what was read, where, when, and under which account.
 
+10. **Write findings back.** Record material findings, and lasting facts about the infrastructure, in your project notes so the next session does not rediscover them.
+
 ## Hard lines
 
 - On a login screen, even autofilled: never click Log in and never type a credential. Ask the human to sign in, then continue.
@@ -44,7 +46,7 @@ What a system did yesterday, or what a summary says it does, is not what it does
 
 ## Shared change budgets
 
-Some tools cap saved versions or deploys for the whole project. Read the live version list right before a change, name each version with workstream, date and purpose, and batch changes. Deleting versions is permanent and needs explicit approval.
+Some tools cap saved versions or deploys for the whole project. Read the live version list right before a change, name each version with workstream, date and purpose, and batch changes. Deleting versions is permanent and needs explicit approval. Publish routes differ: one may move only the draft version while another changes the live one. Read both the saved and the active version ids before and after any publish, and compare canonical content, not key order.
 
 ## Valid and Invalid
 

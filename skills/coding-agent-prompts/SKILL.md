@@ -67,7 +67,12 @@ Never put an agent's name in a prompt title; an agent that reads another agent's
 - Valid: title "IMPORT FILE REBUILD", with "paste into the build session" above the block.
 - Invalid: title "CODEX AUTO-LOOP" pasted into a different agent.
 
-## 9. Long builds with a reviewer
+## 9. Size each pass to the turn, and define watches
+
+- Plan a pass to fit one turn: highest-value step first, scheduled evidence preferred over manual reruns, a "not there yet" rule for state that arrives later, and a list of what not to re-verify. Update a checkpoint file at every step.
+- A watch names the event that ends it and checks at a rhythm matched to how fast that event can arrive. A quiet check sends nothing.
+
+## 10. Long builds with a reviewer
 
 - Lock scope: "this job ONLY until its reviewer approval exists".
 - Spell out gate order: build the whole package, live proofs before publishing steps, reviewer approval last and tied to the package's exact hash. A changed package needs a new approval.
@@ -75,4 +80,5 @@ Never put an agent's name in a prompt title; an agent that reads another agent's
 - Keep reloaded files small (a prompt file under about 20 KB, a handoff under about 15 KB, history archived beside it). Shorten by cutting history, never by deleting spaces, and replace superseded rules in place.
 - For exact copy, give approved wording and require a scripted whole-page diff against the live page listing every difference.
 - If the agent's own approval layer refuses a write, do not have another agent make it. Ask for smaller readable edits, or report it.
+- While one package waits for its run, the next job must not edit any file that package depends on.
 - Approvals come only from the person. An agent never writes an approval into a file for another agent to find.

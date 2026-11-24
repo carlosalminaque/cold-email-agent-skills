@@ -52,6 +52,31 @@ A configuration says what was asked for. The record of what happened says what h
 
 A 2xx response, a "completed" execution or a switched-on job is a claim about the mechanism, not the outcome. Read back what the step produced: the row, the cell, the file, the count.
 
+## Text about a run is not the run
+
+A chat-bot line, a log summary, a dashboard label or an AI-written profile is text one step wrote about something else. It can be wrong while the thing itself was right. Open the run or the record, say which one you read, and add no detail the line does not state. If you cannot open it, quote the line and mark the conclusion unconfirmed.
+
+## Claims that need the same proof
+
+- **Absence.** "It doesn't exist" or "that isn't possible" needs the same check as "it does".
+- **Weak signals.** A field clearing or a spinner stopping does not prove a post landed or a save worked. Prefer a re-fetch or a visible result in the destination.
+- **Identity.** Match a resource by its immutable ID or canonical URL, read back, before attributing an owner, history or behavior to it. A similar title, container or timestamp is not an identity check.
+- **Readers of a thing.** "Which systems read X" is answered by opening each reader's own configuration, not by inferring from what the serving API offers.
+- **Earlier findings.** A caveat or a "fixed and verified" line from a previous pass is a claim. Re-derive it before repeating it.
+
+## Testing a repair
+
+- Run the code that actually ships: the real normalizer, the real category definitions, realistic aliases and casing. A friendlier test stand-in can pass while the deployed path fails.
+- For an end-to-end proof, freeze the systems under test and record version and state baselines first. If someone else changes one mid-proof, mark the evidence mixed and rerun from a fresh baseline.
+
+## Before any report
+
+Check four things: the goal, what "done" means, concrete validation evidence for each claim, and the exact files and systems touched. If one is missing, say so instead of letting the report imply it is complete.
+
+Tag each non-trivial claim: `[VERIFIED: <what was checked>]` or `[UNCONFIRMED: <what was tried and why it did not settle it>]`. Tag conclusions, not routine narration. Readers can then scan straight to the unconfirmed lines.
+
+Say everything still open in the same report: unfinished, degraded, rolled back, deferred, unverified or broken. Nobody should learn of a gap by asking a follow-up. Each open line ends with its next action and who owns it; a report with an open line that lacks one is unfinished.
+
 ## Valid and Invalid
 
 - Valid: "The schedule field says 11:00 to 17:00, but the send log shows Monday's emails went at 08:02. That is a fault."
@@ -60,6 +85,8 @@ A 2xx response, a "completed" execution or a switched-on job is a claim about th
 - Invalid: "The insert returned 201, so all 84 rows landed."
 - Valid: "I wrote the new rule into the prompt file and re-read it: line 42 now says X."
 - Invalid: "Done, the prompt now does X" because a planning note says it should.
+- Valid: "The alert says no retry. The run stored a pending retry for the 12th (row read), so the alert text is wrong."
+- Invalid: "The alert says no retry, so nothing was rescheduled."
 
 ## Before and after
 

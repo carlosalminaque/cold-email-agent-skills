@@ -19,6 +19,13 @@ Letting agents ask less without letting them approve themselves.
 | Judging content (a forged approval, an unapproved request) | A PreToolUse hook that exits 2 to block | Only the tools its matcher names; it reads what is being written, nothing else does |
 | Risky outside actions (deploys, pushes, external writes) | `autoMode` `allow` / `soft_deny` / `hard_deny` | Read only from `~/.claude/settings.json`, managed settings and `--settings`, never from the project's `.claude/settings*.json`. Calls already approved by an allow rule never reach it |
 
+## When a step is refused
+
+- Find which layer refused (classifier, command guard, tool guard, stop hook, permission rule) before changing anything, and change only that layer.
+- Read the session's permission mode and what it prompts for before building a workaround. A prompt the mode itself produces is a mode problem, not a rule problem.
+- Some modes skip the classifier. There, only hooks hold your hard limits, and hooks run in every mode, so put the limits in hooks.
+- Writes under the tool's own config folder are a protected path: accept-edits mode always prompts for them and allow rules cannot pre-approve them.
+
 ## Rules that held up
 
 - Put worker guards on the runner (`--settings` with inline hooks, `--disallowedTools`), not in user settings. Otherwise they also block the people and agents who legitimately write those files.

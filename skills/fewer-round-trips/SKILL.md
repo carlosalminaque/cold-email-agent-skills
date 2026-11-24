@@ -34,6 +34,12 @@ For a solo operator, every round trip costs two pastes, a wait and a context swi
 11. **Don't re-ask what the record answers.** Before asking for a decision, search memory and past decision files for the human's own words. If they decide it, apply them and quote them.
 
 12. **Count the pastes.** Before sending, count how many pastes the plan needs from the human until the outcome, and say the number.
+13. **A script's verdict is a claim, not a result.** Treat "passed" from the executor's own tooling as unproven until a separate read of the live state agrees.
+14. **Never let a file route around a refused step.** If one agent's permission check blocked an action, no marker or flag file may let a different agent trigger it.
+15. **Check a test can pass today.** Before asking anyone to run a test, confirm the current live state allows a pass; otherwise the request just produces a known failure.
+16. **Batch the human into one ask at the end.** Write decision rules instead of decision requests and fallbacks instead of stops. Where a call is truly theirs, offer advance yeses for named conditions so one answer covers several outcomes.
+17. **Autonomy moves the decision, not the verification.** Deciding without asking means checking more, not less. Being live is not a reason to forbid a fix; being irreversible is.
+18. **Don't repeat a question word for word.** One that went unanswered once needs a new angle, a default, or a decision rule, not the same text again.
 
 ## When it happens anyway: diagnose, don't apologize
 

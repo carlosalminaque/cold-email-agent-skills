@@ -49,6 +49,7 @@ Most stalled debugging is not a hard problem. It is an easy problem worked from 
 
    For an unexplained incident in a live system, first list what changed recently (deployments, permission edits, migrations, config edits, moved files) and test each change as a hypothesis before reaching for an outside explanation.
 
+   Keep the diagnosis in proportion: act on a known cause only when the evidence shows the fault it predicts, and never take a drastic or irreversible step "just in case". An error message's own suggested fix is a hint, not an answer; record as the fix only what you saw resolve it. Separate parts of one connection (say a browser extension and a desktop bridge) fail independently, so a fix for one tells you nothing about the other.
 5. **Verify before calling anything absent.** A capability is missing only after you have checked that the tool is registered right now, that the session or connection was actually initialized, that configuration and permissions allow it, and that the object it acts on is in the expected state. One failed attempt proves nothing.
 
 6. **Retry fresh before you say "unavailable".** Open a new session, tab or tool handle. Re-list handles and IDs instead of reusing old ones. Reread the tool's own instructions. Try the other supported routes. If a brand new session fails in exactly the same way, the cause sits above the session; stop retrying and look there.

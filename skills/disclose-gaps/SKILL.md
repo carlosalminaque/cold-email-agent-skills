@@ -45,6 +45,8 @@ Pull open items mechanically (a grep or script), matching the list's current for
 
 Anything found in 2 to 6 that isn't on the open-items list gets added there in the same turn.
 
+Every open item in the report ends with exactly one named next move: a job queued (with its receipt or the reason it waits), a prompt handed to another agent (with the time), or an action only the person can take. Close the report with a table of every open item and where its fix lives.
+
 ## A missed gap means this skill failed
 
 Any open item that surfaces later, and that an earlier pass should have reported, is a defect in this skill. In the same turn:

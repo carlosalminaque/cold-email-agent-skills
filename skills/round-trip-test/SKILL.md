@@ -23,6 +23,7 @@ A mock proves the logic. It does not prove the live system. Webhooks get pointed
 
 3. **Confirm the safety switches.** Read the live state of anything that can send on its own (auto-send timers, allowed categories). If the test reply will trigger a real automatic send, say so before it happens.
 
+   Freeze everything under test for the whole proof: the ingress, shared drafting pieces, the send step and any timer or deployment in scope. Before round one, record each one's id, version, active state and a content hash. Recheck before every round and after the last. Do not edit or publish these until the write-back checks finish. If anything changes mid-proof, label the affected rounds mixed-version and rerun them against a new baseline.
 4. **Decide what this run proves.** One draft can test one path. Pick it first: let the timer run and send, or step in and confirm it backs off. You cannot test both on one draft.
 
 5. **Send a real message, then a real reply.** A human or another agent writes the reply from the test inbox through the real mail channel. Never a hand-made webhook POST. Word the reply so it lands in the category you want to test.
