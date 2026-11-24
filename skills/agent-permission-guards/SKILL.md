@@ -23,7 +23,7 @@ Letting agents ask less without letting them approve themselves.
 
 - Find which layer refused (classifier, command guard, tool guard, stop hook, permission rule) before changing anything, and change only that layer.
 - Read the session's permission mode and what it prompts for before building a workaround. A prompt the mode itself produces is a mode problem, not a rule problem.
-- Some modes skip the classifier. There, only hooks hold your hard limits, and hooks run in every mode, so put the limits in hooks.
+- Some modes skip the classifier. Deny rules and the sandbox still apply there, but hooks are the one layer that runs in every mode, so put the hard limits in hooks.
 - Writes under the tool's own config folder are a protected path: accept-edits mode always prompts for them and allow rules cannot pre-approve them.
 
 ## Rules that held up
